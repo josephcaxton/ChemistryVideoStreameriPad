@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C5A9B4D15E24A7300FDAC4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5A9B4C15E24A7300FDAC4E /* UIKit.framework */; };
+		7C5A9B4F15E24A7300FDAC4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5A9B4E15E24A7300FDAC4E /* Foundation.framework */; };
+		7C5A9B5115E24A7300FDAC4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5A9B5015E24A7300FDAC4E /* CoreGraphics.framework */; };
+		7C5A9B5715E24A7300FDAC4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C5A9B5515E24A7300FDAC4E /* InfoPlist.strings */; };
+		7C5A9B5915E24A7300FDAC4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5A9B5815E24A7300FDAC4E /* main.m */; };
+		7C5A9B5D15E24A7300FDAC4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5A9B5C15E24A7300FDAC4E /* AppDelegate.m */; };
+		7C5A9B6015E24A7300FDAC4E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5A9B5F15E24A7300FDAC4E /* FirstViewController.m */; };
+		7C5A9B6215E24A7300FDAC4E /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5A9B6115E24A7300FDAC4E /* first.png */; };
+		7C5A9B6415E24A7300FDAC4E /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5A9B6315E24A7300FDAC4E /* first@2x.png */; };
+		7C5A9B6715E24A7300FDAC4E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5A9B6615E24A7300FDAC4E /* SecondViewController.m */; };
+		7C5A9B6915E24A7300FDAC4E /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5A9B6815E24A7300FDAC4E /* second.png */; };
+		7C5A9B6B15E24A7300FDAC4E /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5A9B6A15E24A7300FDAC4E /* second@2x.png */; };
+		7C5A9B6E15E24A7300FDAC4E /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C5A9B6C15E24A7300FDAC4E /* FirstViewController.xib */; };
+		7C5A9B7115E24A7300FDAC4E /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C5A9B6F15E24A7300FDAC4E /* SecondViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7C5A9B4815E24A7300FDAC4E /* ChemistryVideoStreameriPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemistryVideoStreameriPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C5A9B4C15E24A7300FDAC4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7C5A9B4E15E24A7300FDAC4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7C5A9B5015E24A7300FDAC4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7C5A9B5415E24A7300FDAC4E /* ChemistryVideoStreameriPad-Info.plist */ = {isa = PBXFileReference; path = "ChemistryVideoStreameriPad-Info.plist"; sourceTree = "<group>"; };
+		7C5A9B5615E24A7300FDAC4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7C5A9B5815E24A7300FDAC4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7C5A9B5A15E24A7300FDAC4E /* ChemistryVideoStreameriPad-Prefix.pch */ = {isa = PBXFileReference; path = "ChemistryVideoStreameriPad-Prefix.pch"; sourceTree = "<group>"; };
+		7C5A9B5B15E24A7300FDAC4E /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		7C5A9B5C15E24A7300FDAC4E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7C5A9B5E15E24A7300FDAC4E /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		7C5A9B5F15E24A7300FDAC4E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		7C5A9B6115E24A7300FDAC4E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		7C5A9B6315E24A7300FDAC4E /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		7C5A9B6515E24A7300FDAC4E /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		7C5A9B6615E24A7300FDAC4E /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		7C5A9B6815E24A7300FDAC4E /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		7C5A9B6A15E24A7300FDAC4E /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		7C5A9B6D15E24A7300FDAC4E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
+		7C5A9B7015E24A7300FDAC4E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C5A9B4515E24A7300FDAC4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C5A9B4D15E24A7300FDAC4E /* UIKit.framework in Frameworks */,
+				7C5A9B4F15E24A7300FDAC4E /* Foundation.framework in Frameworks */,
+				7C5A9B5115E24A7300FDAC4E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C5A9B3D15E24A7200FDAC4E = {
+			isa = PBXGroup;
+			children = (
+				7C5A9B5215E24A7300FDAC4E /* ChemistryVideoStreameriPad */,
+				7C5A9B4B15E24A7300FDAC4E /* Frameworks */,
+				7C5A9B4915E24A7300FDAC4E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7C5A9B4915E24A7300FDAC4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C5A9B4815E24A7300FDAC4E /* ChemistryVideoStreameriPad.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C5A9B4B15E24A7300FDAC4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C5A9B4C15E24A7300FDAC4E /* UIKit.framework */,
+				7C5A9B4E15E24A7300FDAC4E /* Foundation.framework */,
+				7C5A9B5015E24A7300FDAC4E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C5A9B5215E24A7300FDAC4E /* ChemistryVideoStreameriPad */ = {
+			isa = PBXGroup;
+			children = (
+				7C5A9B5B15E24A7300FDAC4E /* AppDelegate.h */,
+				7C5A9B5C15E24A7300FDAC4E /* AppDelegate.m */,
+				7C5A9B5E15E24A7300FDAC4E /* FirstViewController.h */,
+				7C5A9B5F15E24A7300FDAC4E /* FirstViewController.m */,
+				7C5A9B6115E24A7300FDAC4E /* first.png */,
+				7C5A9B6315E24A7300FDAC4E /* first@2x.png */,
+				7C5A9B6515E24A7300FDAC4E /* SecondViewController.h */,
+				7C5A9B6615E24A7300FDAC4E /* SecondViewController.m */,
+				7C5A9B6815E24A7300FDAC4E /* second.png */,
+				7C5A9B6A15E24A7300FDAC4E /* second@2x.png */,
+				7C5A9B6C15E24A7300FDAC4E /* FirstViewController.xib */,
+				7C5A9B6F15E24A7300FDAC4E /* SecondViewController.xib */,
+				7C5A9B5315E24A7300FDAC4E /* Supporting Files */,
+			);
+			path = ChemistryVideoStreameriPad;
+			sourceTree = "<group>";
+		};
+		7C5A9B5315E24A7300FDAC4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C5A9B5415E24A7300FDAC4E /* ChemistryVideoStreameriPad-Info.plist */,
+				7C5A9B5515E24A7300FDAC4E /* InfoPlist.strings */,
+				7C5A9B5815E24A7300FDAC4E /* main.m */,
+				7C5A9B5A15E24A7300FDAC4E /* ChemistryVideoStreameriPad-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7C5A9B4715E24A7300FDAC4E /* ChemistryVideoStreameriPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C5A9B7415E24A7300FDAC4E /* Build configuration list for PBXNativeTarget "ChemistryVideoStreameriPad" */;
+			buildPhases = (
+				7C5A9B4415E24A7300FDAC4E /* Sources */,
+				7C5A9B4515E24A7300FDAC4E /* Frameworks */,
+				7C5A9B4615E24A7300FDAC4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChemistryVideoStreameriPad;
+			productName = ChemistryVideoStreameriPad;
+			productReference = 7C5A9B4815E24A7300FDAC4E /* ChemistryVideoStreameriPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C5A9B3F15E24A7200FDAC4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = caxtonidowu;
+			};
+			buildConfigurationList = 7C5A9B4215E24A7200FDAC4E /* Build configuration list for PBXProject "ChemistryVideoStreameriPad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7C5A9B3D15E24A7200FDAC4E;
+			productRefGroup = 7C5A9B4915E24A7300FDAC4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C5A9B4715E24A7300FDAC4E /* ChemistryVideoStreameriPad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7C5A9B4615E24A7300FDAC4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C5A9B5715E24A7300FDAC4E /* InfoPlist.strings in Resources */,
+				7C5A9B6215E24A7300FDAC4E /* first.png in Resources */,
+				7C5A9B6415E24A7300FDAC4E /* first@2x.png in Resources */,
+				7C5A9B6915E24A7300FDAC4E /* second.png in Resources */,
+				7C5A9B6B15E24A7300FDAC4E /* second@2x.png in Resources */,
+				7C5A9B6E15E24A7300FDAC4E /* FirstViewController.xib in Resources */,
+				7C5A9B7115E24A7300FDAC4E /* SecondViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7C5A9B4415E24A7300FDAC4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C5A9B5915E24A7300FDAC4E /* main.m in Sources */,
+				7C5A9B5D15E24A7300FDAC4E /* AppDelegate.m in Sources */,
+				7C5A9B6015E24A7300FDAC4E /* FirstViewController.m in Sources */,
+				7C5A9B6715E24A7300FDAC4E /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7C5A9B5515E24A7300FDAC4E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C5A9B5615E24A7300FDAC4E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7C5A9B6C15E24A7300FDAC4E /* FirstViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C5A9B6D15E24A7300FDAC4E /* en */,
+			);
+			name = FirstViewController.xib;
+			sourceTree = "<group>";
+		};
+		7C5A9B6F15E24A7300FDAC4E /* SecondViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C5A9B7015E24A7300FDAC4E /* en */,
+			);
+			name = SecondViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7C5A9B7215E24A7300FDAC4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		7C5A9B7315E24A7300FDAC4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7C5A9B7515E24A7300FDAC4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChemistryVideoStreameriPad/ChemistryVideoStreameriPad-Prefix.pch";
+				INFOPLIST_FILE = "ChemistryVideoStreameriPad/ChemistryVideoStreameriPad-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7C5A9B7615E24A7300FDAC4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChemistryVideoStreameriPad/ChemistryVideoStreameriPad-Prefix.pch";
+				INFOPLIST_FILE = "ChemistryVideoStreameriPad/ChemistryVideoStreameriPad-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7C5A9B4215E24A7200FDAC4E /* Build configuration list for PBXProject "ChemistryVideoStreameriPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C5A9B7215E24A7300FDAC4E /* Debug */,
+				7C5A9B7315E24A7300FDAC4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C5A9B7415E24A7300FDAC4E /* Build configuration list for PBXNativeTarget "ChemistryVideoStreameriPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C5A9B7515E24A7300FDAC4E /* Debug */,
+				7C5A9B7615E24A7300FDAC4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7C5A9B3F15E24A7200FDAC4E /* Project object */;
+}
