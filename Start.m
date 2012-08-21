@@ -25,7 +25,7 @@
     
 
     
-    self.navigationItem.title = @"English from LearnersCloud";
+    self.navigationItem.title = @"Chemistry from LearnersCloud";
     
     self.navigationItem.backBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"Back"
@@ -40,10 +40,10 @@
 	self.FirstView = [[UIView alloc] initWithFrame:FirstViewframe];
     
     LoginTitle = [[NSString alloc] initWithString:@""];
-    Image = [UIImage imageNamed:@"EnglishBackground.png"];
+    Image = [UIImage imageNamed:@"ChemistryBackground.png"];
     ImageView = [[UIImageView alloc] initWithImage:Image];
    // ImageView.frame = CGRectMake(0 ,0, 540, 950);
-    ImageView.frame = CGRectMake(60 ,200, 640, 480);
+    ImageView.frame = CGRectMake(60 ,240, 640, 360);
 
     
    // UIColor *patternColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Cinema_port.png"]];
@@ -368,7 +368,7 @@
         
         // This is requesting access via Silverlight credentials
         
-        NSString *AppID = @"1";   // 2 means this is maths, 1 is English , 3 is physics 
+        NSString *AppID = @"4";   // 1 is English , 2 means this is maths,  3 is physics, 4 is Chemistry 
         NSString *queryString = [NSString stringWithFormat:@"%@/Services/iOS/VideoSubscription.asmx/FindSLSubscription",domain];
         NSURL *url = [NSURL URLWithString:queryString];
         NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
@@ -548,8 +548,8 @@
              NSError *error;
              // Report to  analytics
              if (![[GANTracker sharedTracker] trackEvent:@"User login failed"
-                                                  action:@"Login to maths failed"
-                                                   label:@"Login to maths failed"
+                                                  action:@"Login to chemistry failed"
+                                                   label:@"Login to chemistry failed"
                                                    value:79
                                                withError:&error]) {
                  NSLog(@"error in trackEvent");
@@ -603,7 +603,7 @@
         
         FreeVideos.frame = CGRectMake(85,100, 600, 64);
         BtnTransfermysubscription.frame = CGRectMake(400,695, 300, 64);
-        ImageView.frame = CGRectMake(60,200, 640, 480);
+        ImageView.frame = CGRectMake(60,240, 640, 360);
         FirstView.frame = CGRectMake(0, 0,SCREEN_WIDTH, SCREEN_HEIGHT);
         LoginViaLearnersCloud.frame = CGRectMake(60 ,700, 300, 54);
         
@@ -612,7 +612,7 @@
     {
         FreeVideos.frame = CGRectMake(220,15, 600, 64);
         BtnTransfermysubscription.frame = CGRectMake(540 ,590, 300, 64);
-        ImageView.frame = CGRectMake(200,90, 640, 480);
+        ImageView.frame = CGRectMake(200,130, 640, 360);
         FirstView.frame = CGRectMake(0, 0, SCREEN_HEIGHT + 80 , SCREEN_WIDTH);
         LoginViaLearnersCloud.frame = CGRectMake(200 ,595, 300, 54);
         

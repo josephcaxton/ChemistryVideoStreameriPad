@@ -475,7 +475,7 @@
     else if ([obj SociallyFree] == YES){
         // Have you shared if so view video
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        if([[prefs objectForKey:@"AddOneFreeEnglish"] isEqualToString:@"1"]){
+        if([[prefs objectForKey:@"AddOneFreeChemistry"] isEqualToString:@"1"]){
             
             VideoPlayer *VP1 = [[VideoPlayer alloc] initWithNibName:nil bundle:nil];
             VP1.FreeView = self;

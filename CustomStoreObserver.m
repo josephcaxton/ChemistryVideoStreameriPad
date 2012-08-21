@@ -171,29 +171,29 @@
     // Only 1 month to 1 Year subscription supported
     
     
-    if ([[theProductID lowercaseString] isEqualToString:@"englishipad1month"] ){
+    if ([[theProductID lowercaseString] isEqualToString:@"chemistryipad1month"] ){
         
         return @"31";
         
     }
     
-    else if ([[theProductID lowercaseString] isEqualToString:@"englishipad3months"] ){
+    else if ([[theProductID lowercaseString] isEqualToString:@"chemistryipad3months"] ){
         
         return @"93";
         
     }
-    else if ([[theProductID lowercaseString] isEqualToString:@"englishipad6months"] ){
+    else if ([[theProductID lowercaseString] isEqualToString:@"chemistryipad6months"] ){
         
         return @"186";
         
     }
     
-    else if ([[theProductID lowercaseString] isEqualToString:@"englishipad9months"] ){
+    else if ([[theProductID lowercaseString] isEqualToString:@"chemistryipad9months"] ){
         
         return @"279";
         
     }
-    else if ([[theProductID lowercaseString] isEqualToString:@"englishipad12months"] ){
+    else if ([[theProductID lowercaseString] isEqualToString:@"chemistryipad12months"] ){
         
         return @"372";
         
@@ -412,7 +412,7 @@
     
     NSURL *url = [NSURL URLWithString:queryString];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
-    VerificationAppID = [[NSString alloc] initWithString:@"3"]; //English iPad
+    VerificationAppID = [[NSString alloc] initWithString:@"5"]; //Chemistry iPad
     
         NSString *FullString = [NSString stringWithFormat:@"productIdentifier=%@&DeviceID=%@&days=%@&transactionIdentifier=%@&B64receipt=%@&email=%@&password=%@&AppID=%@",FinalProductID,MyDeviceId,SubscriptionInDays,TransactionID,EncodedReceipt,EmailAddress,Password,VerificationAppID];
         

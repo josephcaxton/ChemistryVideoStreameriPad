@@ -25,7 +25,7 @@
     if (![[GANTracker sharedTracker] trackEvent:@"Finished playing video"
                                          action:@"Playing Finished"
                                           label:@"Playing Finished"
-                                          value:69
+                                          value:1
                                       withError:&error]) {
         NSLog(@"error in trackEvent");
     }
@@ -52,7 +52,7 @@
     
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     domain = appDelegate.DomainName;
-    ServerLocation = [NSString stringWithFormat:@"%@/iosStream/English/",domain];
+    ServerLocation = [NSString stringWithFormat:@"%@/iosStream/Chemistry/",domain];
 	
     NSError *error;
     // Report to  analytics
@@ -72,7 +72,7 @@
     if (![[GANTracker sharedTracker] trackEvent:@"Playing Video"
                                          action:@"Playing"
                                           label:@"Playing"
-                                          value:69
+                                          value:1
                                       withError:&error]) {
         NSLog(@"error in trackEvent");
     }

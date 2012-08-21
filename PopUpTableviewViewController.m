@@ -119,7 +119,7 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
        // UIImage* mailImage = [UIImage imageNamed:@"mail.png"];
        //cell.imageView.image = mailImage;
       
-      cell.textLabel.text = @"Like what you see here? Share this app with a friend and we give you one more video free!";
+      cell.textLabel.text = @"Like what you see here? Share this app with a friend and we give you more videos free!";
         cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
         cell.textLabel.numberOfLines = 0;
         cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
@@ -297,7 +297,7 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
         if (![[GANTracker sharedTracker] trackEvent:@"Shared via email"
                                              action:@"Email shared"
                                               label:@"Email shared"
-                                              value:69
+                                              value:1
                                           withError:&error]) {
             NSLog(@"error in trackEvent");
         }
@@ -305,9 +305,9 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
         
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
          // Give user one free video.
-            if(![prefs objectForKey:@"AddOneFreeEnglish"]){
+            if(![prefs objectForKey:@"AddOneFreeChemistry"]){
         
-                [prefs setObject:@"1" forKey:@"AddOneFreeEnglish"];
+                [prefs setObject:@"1" forKey:@"AddOneFreeChemistry"];
                 [prefs synchronize];
     
                 }
@@ -425,10 +425,10 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     // Give user one free video.
-    if(![prefs objectForKey:@"AddOneFreeEnglish"]){
+    if(![prefs objectForKey:@"AddOneFreeChemistry"]){
         
         
-        [prefs setObject:@"1" forKey:@"AddOneFreeEnglish"];
+        [prefs setObject:@"1" forKey:@"AddOneFreeChemistry"];
         [prefs synchronize];
         
     }
@@ -483,9 +483,9 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
 
                     
                     // Give user one free video.
-                    if(![prefs objectForKey:@"AddOneFreeEnglish"]){
+                    if(![prefs objectForKey:@"AddOneFreeChemistry"]){
                         
-                        [prefs setObject:@"1" forKey:@"AddOneFreeEnglish"];
+                        [prefs setObject:@"1" forKey:@"AddOneFreeChemistry"];
                         [prefs synchronize];
                         
                     }

@@ -33,7 +33,7 @@ static NSString* const kAnalyticsAccountId = @"UA-34210077-1";
     //For testing
     
     //NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    //[prefs setObject:@"0" forKey:@"AddOneFreeEnglish"];
+    //[prefs setObject:@"0" forKey:@"AddOneFreeChemistry"];
     //[prefs synchronize];
 
     //Remove useless tabbarItems ..
@@ -117,7 +117,7 @@ static NSString* const kAnalyticsAccountId = @"UA-34210077-1";
      NSLog(@"error in setCustomVariableAtIndex");
      } */
     
-    if (![[GANTracker sharedTracker] trackEvent:@"Englis Video Streamer Started"
+    if (![[GANTracker sharedTracker] trackEvent:@"Chemistry Video Streamer Started"
                                          action:@"Launch iOS"
                                           label:@"Launch iOS"
                                           value:99
@@ -181,7 +181,7 @@ static NSString* const kAnalyticsAccountId = @"UA-34210077-1";
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSString *deviceID = [prefs stringForKey:@"LCUIID"];
     
-    NSString *AppID = @"58";   // 58 means this is English
+    NSString *AppID = @"64";   // 64 means this is Chemistry
     NSString *queryString = [NSString stringWithFormat:@"%@/Services/iOS/VideoSubscription.asmx/HasCurrentSubscription",DomainName];
     NSURL *url = [NSURL URLWithString:queryString];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
