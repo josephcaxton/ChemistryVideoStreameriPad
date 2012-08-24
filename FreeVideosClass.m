@@ -58,13 +58,18 @@
     [buttons addObject:spacer];
     
     // Create Share image button
-    UIImage *ShareImage = [UIImage imageNamed:@"shareIcon.png"];
-    UIButton *face = [UIButton buttonWithType:UIButtonTypeCustom];
-    face.bounds = CGRectMake( 0, 0, ShareImage.size.width, ShareImage.size.height );
-    [face setImage:ShareImage forState:UIControlStateNormal];
+    UIImage *ShareImage = [UIImage imageNamed:@"buttonbackgroud.png"];
+    //face.bounds = CGRectMake( 0, 0, ShareImage.size.width, ShareImage.size.height );
+    //[face setImage:ShareImage forState:UIControlStateNormal];
+    UIButton *face = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+    [face setBackgroundImage:ShareImage forState:UIControlStateNormal];
+    face.bounds = CGRectMake( 0, 0, 70, 30 );
+    [face setTitle:@"Share" forState:UIControlStateNormal];
+    [face setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [face addTarget:self action:@selector(share:)forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *ShareButton = [[UIBarButtonItem alloc] initWithCustomView:face];
+    
     
      [buttons addObject:ShareButton];
     

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  EnglishVideoStreameriPad
+//  ChemistryVideoStreameriPhone
 //
 //  Created by Joseph caxton-Idowu on 04/06/2012.
 //  Copyright (c) 2012 caxtonidowu. All rights reserved.
