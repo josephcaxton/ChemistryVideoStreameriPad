@@ -473,7 +473,8 @@
         
     VideoPlayer *VP1 = [[VideoPlayer alloc] initWithNibName:nil bundle:nil];
     VP1.FreeView = self;
-    VP1.VideoFileName =[NSString stringWithString:[obj M3u8]];
+    //NSString *M3U8 = [[obj M3u8] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    VP1.VideoFileName =[obj M3u8];
     [self.navigationController pushViewController:VP1 animated:YES];
     }
     
