@@ -26,6 +26,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.navigationItem.title = @"Terms and conditions";
+    
+    
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0,185,55)];
+    label.textColor = [UIColor whiteColor];
+    label.backgroundColor = [UIColor clearColor];
+    label.text = self.navigationItem.title;
+    label.font = [UIFont fontWithName:@"Helvetica-Bold" size:24.0];
+    self.navigationItem.titleView = label;
+    [label sizeToFit];
+    
+
     self.WebBox = [[UIWebView alloc ] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
 	self.WebBox.scalesPageToFit = YES;
 	self.WebBox.delegate = self;

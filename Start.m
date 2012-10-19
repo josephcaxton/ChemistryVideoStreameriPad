@@ -10,10 +10,11 @@
 #import "FreeVideosClass.h"
 #import "AppDelegate.h"
 #import "GANTracker.h"
+#import "UnderlinedButton.h"
 
 @implementation Start
 
-@synthesize FirstView,FreeVideos,BtnTransfermysubscription,RentaVideo,Image,ImageView,UsernameText,PasswordText,TextField,ReponseFromServer,PassageFlag,LoginViaLearnersCloud,WhichButton,LoginTitle;
+@synthesize FirstView,FreeVideos,BtnTransfermysubscription,RentaVideo,Image,ImageView,UsernameText,PasswordText,TextField,ReponseFromServer,PassageFlag,LoginViaLearnersCloud,WhichButton,LoginTitle,TVHeaderImage,TVHeaderImageView;
 
 #define SCREEN_WIDTH  768    
 #define SCREEN_HEIGHT 950
@@ -25,7 +26,17 @@
     
 
     
-    self.navigationItem.title = @"Chemistry from LearnersCloud";
+    self.navigationItem.title = @"LearnersCloud";
+    
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0,185,55)];
+    label.textColor = [UIColor whiteColor];
+    label.backgroundColor = [UIColor clearColor];
+    label.text = self.navigationItem.title;
+    label.font = [UIFont fontWithName:@"Helvetica-Bold" size:24.0];
+    self.navigationItem.titleView = label;
+    [label sizeToFit];
+    
+    
     
     self.navigationItem.backBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"Back"
@@ -33,60 +44,96 @@
                                     target:nil
                                     action:nil];
 
-    UINavigationController *nav =self.navigationController;
-    nav.navigationBar.tintColor = [UIColor blackColor];
+    // Header
+    
+    NSString *HeaderLocation = [[NSBundle mainBundle] pathForResource:@"header_bar" ofType:@"png"];
+    UIImage *HeaderBackImage = [[UIImage alloc] initWithContentsOfFile:HeaderLocation];
+    [self.navigationController.navigationBar setBackgroundImage:HeaderBackImage forBarMetrics:UIBarMetricsDefault];
+    
+
+    
+    // Login and logout does not work
+    /* NSString *LoginImagePath = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"png"];
+     LoginImage = [[UIImage alloc] initWithContentsOfFile:LoginImagePath];
+     
+     NSString *LogoutImagePath = [[NSBundle mainBundle] pathForResource:@"logout" ofType:@"png"];
+     LogoutImage = [[UIImage alloc] initWithContentsOfFile:LogoutImagePath];
+     
+     LoginViaLearnersCloud = [[UIBarButtonItem alloc]initWithImage:LoginImage style:UIBarButtonItemStylePlain target:self action:@selector(TransferSubscription:)]; */
+    
+    
+    LoginViaLearnersCloud = [[UIBarButtonItem alloc] initWithTitle:@"Login" style: UIBarButtonItemStyleBordered target:self action:@selector(TransferSubscription:)];
+    //This will only worl on ios 5 up
+    //[LoginViaLearnersCloud setTintColor:[UIColor whiteColor]];
+    //[LoginViaLearnersCloud setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIColor blackColor], UITextAttributeFont,nil] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = LoginViaLearnersCloud;
+    
+    
+    // We need to change the color of the Buttons using images... Which means we need to move away from using button.text on decisions. May be next version
+    
+    
+    
+    
+    NSString *BackImagePath = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
+	UIImage *BackImage = [[UIImage alloc] initWithContentsOfFile:BackImagePath];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:BackImage];
+    
+    
+    
+    
     
     CGRect FirstViewframe = CGRectMake(0 ,0, SCREEN_WIDTH, SCREEN_HEIGHT);
 	self.FirstView = [[UIView alloc] initWithFrame:FirstViewframe];
     
-    LoginTitle = [[NSString alloc] initWithString:@""];
-    Image = [UIImage imageNamed:@"ChemistryBackground.png"];
-    ImageView = [[UIImageView alloc] initWithImage:Image];
-   // ImageView.frame = CGRectMake(0 ,0, 540, 950);
-    ImageView.frame = CGRectMake(60 ,240, 640, 360);
-
+    LoginTitle = @"";
     
-   // UIColor *patternColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Cinema_port.png"]];
-
+    TVHeaderImage = [UIImage imageNamed:@"TV_chemistry_header.png"];
+    TVHeaderImageView = [[UIImageView alloc] initWithImage:TVHeaderImage];
+    TVHeaderImageView.frame = CGRectMake(130 ,30, 495, 223);
+    [FirstView addSubview:TVHeaderImageView];
+    
+    
+    Image = [UIImage imageNamed:@"hero_chemistry.png"];
+    ImageView = [[UIImageView alloc] initWithImage:Image];
+    // ImageView.frame = CGRectMake(0 ,0, 540, 950);
+    ImageView.frame = CGRectMake(60 ,350, 640, 190);
     [FirstView addSubview:ImageView];
-
+    
+    // UIColor *patternColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Cinema_port.png"]];
+    
+    
+    
     [self.view addSubview:FirstView];
     
-   
-    FreeVideos = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //[FreeVideos setTitle:@"Start here to view free and subscription videos!" forState:UIControlStateNormal];
-    FreeVideos.frame = CGRectMake(85 ,100, 600, 64);
-    UIImage *FreeVideosbuttonImage = [UIImage imageNamed:@"starthere.png"];
-    [FreeVideos setBackgroundImage:FreeVideosbuttonImage forState:UIControlStateNormal];
-
     
-
+    NSString *StartImageLocation = [[NSBundle mainBundle] pathForResource:@"free_and_paid_videos" ofType:@"png"];
+    UIImage *StartImage = [[UIImage alloc] initWithContentsOfFile:StartImageLocation];
+    
+    FreeVideos = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [FreeVideos setImage:StartImage forState:UIControlStateNormal];
+    FreeVideos.frame = CGRectMake(40 ,330, 250, 47);
+    
+    
     [FreeVideos addTarget:self action:@selector(ViewFreeVideos:) forControlEvents:UIControlEventTouchUpInside];
     
     [FirstView addSubview:FreeVideos];
     
     
     
-    BtnTransfermysubscription = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //[BtnTransfermysubscription setTitle:@"Transfer my subscription to this device" forState:UIControlStateNormal];
-    //[BtnTransfermysubscription setTitleColor:[UIColor redColor] forState: UIControlStateNormal];
-    BtnTransfermysubscription.frame = CGRectMake(400,695, 300, 64);
-    UIImage *BtnTransfermysubscriptionbuttonImage = [UIImage imageNamed:@"transfer.png"];
-   [BtnTransfermysubscription setBackgroundImage:BtnTransfermysubscriptionbuttonImage forState:UIControlStateNormal];
+    BtnTransfermysubscription = [UnderlinedButton buttonWithType:UIButtonTypeCustom];
+    BtnTransfermysubscription.frame = CGRectMake(250,730, 300, 64);
+    BtnTransfermysubscription.backgroundColor = [UIColor clearColor];
+    [BtnTransfermysubscription setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [BtnTransfermysubscription setTitle:@"Transfer my subscription" forState:UIControlStateNormal];
+    BtnTransfermysubscription.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size: 24.0];
     BtnTransfermysubscription.tag = 999;
+    
     [BtnTransfermysubscription addTarget:self action:@selector(TransferSubscription:) forControlEvents:UIControlEventTouchUpInside];
+    
     
     [FirstView addSubview:BtnTransfermysubscription];
     
-    LoginViaLearnersCloud = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [LoginViaLearnersCloud setTitle:LoginTitle forState:UIControlStateNormal];
-    [LoginViaLearnersCloud setBackgroundColor:[UIColor blueColor]];
-    [LoginViaLearnersCloud  setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    LoginViaLearnersCloud.frame = CGRectMake(60 ,700, 300, 54);
-    LoginViaLearnersCloud.tag = 101010;
     
-    
-    [FirstView addSubview:LoginViaLearnersCloud];
     
     NSError *error;
     // Report to  analytics
@@ -94,7 +141,6 @@
                                          withError:&error]) {
         NSLog(@"error in trackPageview");
     }
-
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -103,24 +149,30 @@
     if(appDelegate.UserEmail == nil){
         
         LoginTitle =@"Login";
-        [LoginViaLearnersCloud addTarget:self action:@selector(TransferSubscription:) forControlEvents:UIControlEventTouchUpInside];
+        [LoginViaLearnersCloud setTarget:self];
+        [LoginViaLearnersCloud setAction:@selector(TransferSubscription:)];
+        LoginViaLearnersCloud.title = @"Login";
+        self.navigationItem.rightBarButtonItem = LoginViaLearnersCloud;
     }
     
     else if([appDelegate.UserEmail isEqualToString:@"JustAGeneralEmail@thisapp.com"]){
         
         LoginTitle =@"Logout";
-        [LoginViaLearnersCloud addTarget:self action:@selector(LogoutUser:) forControlEvents:UIControlEventTouchUpInside];
+        [LoginViaLearnersCloud setTarget:self];
+        [LoginViaLearnersCloud setAction:@selector(LogoutUser:)];
+        LoginViaLearnersCloud.title = @"Logout";
+        self.navigationItem.rightBarButtonItem = LoginViaLearnersCloud;
     }
     
     else {
         
-        LoginTitle =@"Login";
-        [LoginViaLearnersCloud addTarget:self action:@selector(TransferSubscription:) forControlEvents:UIControlEventTouchUpInside];
+        [LoginViaLearnersCloud setTarget:self];
+        [LoginViaLearnersCloud setAction:@selector(TransferSubscription:)];
+        LoginViaLearnersCloud.title = @"Login";
+        self.navigationItem.rightBarButtonItem = LoginViaLearnersCloud;
+        
     }
     
-   
-
-    [LoginViaLearnersCloud setTitle:LoginTitle forState:UIControlStateNormal];
     
 }
 
@@ -189,7 +241,7 @@
     WhichButton = (UIButton *)sender;
    // NSLog(@"%i",WhichButton.tag);
     
-    NSString *myTitle = [[NSString alloc] initWithString:@"Enter your details"];
+    NSString *myTitle = @"Enter your details";
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:myTitle message:@"\n \n \n \n" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     
     
@@ -228,14 +280,14 @@
             
             if (notAValidEmail || [UsernameText.text length] == 0) {
                 // Your email is not valid or you have not entered an emailaddress
-               NSString *AlertTitle = [[NSString alloc] initWithString:@"Your email is not valid or you have not entered an email address. Try again?"];
+               NSString *AlertTitle = @"Your email is not valid or you have not entered an email address. Try again?";
                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:AlertTitle message:@"\n" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
                 alertView.tag = 1212;
                 [alertView show];
             }
             else if([PasswordText.text length] == 0 ){
                 // "password missing
-                NSString *AlertTitle = [[NSString alloc] initWithString:@"You did not enter a password. Try again?"];
+                NSString *AlertTitle = @"You did not enter a password. Try again?";
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:AlertTitle message:@"\n" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
                 alertView.tag = 1212;
                 [alertView show];
@@ -263,9 +315,9 @@
     else if(actionSheet.tag == 1111) {
         
         LoginTitle = @"Login";
-        [LoginViaLearnersCloud addTarget:self action:@selector(TransferSubscription:) forControlEvents:UIControlEventTouchUpInside];
-        [LoginViaLearnersCloud setTitle:LoginTitle forState:UIControlStateNormal];
-
+        [LoginViaLearnersCloud setTarget:self];
+        [LoginViaLearnersCloud setAction:@selector(TransferSubscription:)];
+        LoginViaLearnersCloud.title = @"Login";
         }
     else {
         
@@ -521,8 +573,11 @@
               appDelegate.AccessAll = TRUE;
               appDelegate.UserEmail = @"JustAGeneralEmail@thisapp.com";
               LoginTitle = @"Logout";
-              [LoginViaLearnersCloud addTarget:self action:@selector(LogoutUser:) forControlEvents:UIControlEventTouchUpInside];
-              [LoginViaLearnersCloud setTitle:LoginTitle forState:UIControlStateNormal];
+              [LoginViaLearnersCloud setTarget:self];
+              [LoginViaLearnersCloud setAction:@selector(LogoutUser:)];
+              LoginViaLearnersCloud.title = @"Logout";
+              
+
               [self ViewFreeVideos:self];
           }
          else if (Returnid == -1)
@@ -586,6 +641,16 @@
 	
 }
 
+// For ios 6
+-(NSUInteger)supportedInterfaceOrientations{
+    
+    return UIInterfaceOrientationMaskAll;
+    
+    
+}
+
+// for ios 5
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     
@@ -601,20 +666,22 @@
     
     if (interfaceOrientation == UIInterfaceOrientationPortrait  || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
         
-        FreeVideos.frame = CGRectMake(85,100, 600, 64);
-        BtnTransfermysubscription.frame = CGRectMake(400,695, 300, 64);
-        ImageView.frame = CGRectMake(60,240, 640, 360);
+        TVHeaderImageView.frame = CGRectMake(130 ,30, 495, 223);
+        FreeVideos.frame = CGRectMake(85,630, 600, 64);
+        BtnTransfermysubscription.frame = CGRectMake(250,730, 300, 64);
+        ImageView.frame = CGRectMake(60,350, 640, 190);
         FirstView.frame = CGRectMake(0, 0,SCREEN_WIDTH, SCREEN_HEIGHT);
-        LoginViaLearnersCloud.frame = CGRectMake(60 ,700, 300, 54);
+        
         
     }
     else
     {
-        FreeVideos.frame = CGRectMake(220,15, 600, 64);
-        BtnTransfermysubscription.frame = CGRectMake(540 ,590, 300, 64);
-        ImageView.frame = CGRectMake(200,130, 640, 360);
+        TVHeaderImageView.frame = CGRectMake(280 ,30, 495, 223);
+        FreeVideos.frame = CGRectMake(220,480, 600, 64);
+        BtnTransfermysubscription.frame = CGRectMake(370 ,570, 300, 64);
+        ImageView.frame = CGRectMake(200,250, 640, 190);
         FirstView.frame = CGRectMake(0, 0, SCREEN_HEIGHT + 80 , SCREEN_WIDTH);
-        LoginViaLearnersCloud.frame = CGRectMake(200 ,595, 300, 54);
+        
         
     }
     

@@ -38,4 +38,6 @@
 //-(void)AdjustProductSubscribedTo;
 
 - (void)reviewPressed;
+-(IBAction)ViewFree:(UIButton*)sender;
+-(IBAction)GoSubScribe:(UIButton*)sender;
 @end

@@ -11,6 +11,8 @@
 #import "ConfigObject.h"
 #import "VideoPlayer.h"
 #import "Buy.h"
+#import "TransparentToolBar.h"
+
 
 
 @implementation FreeVideosClass
@@ -24,9 +26,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	
+	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     
-	self.navigationItem.title = @"Free and Subscription Videos";
+	//self.navigationItem.title = @"Free and Subscription Videos";
+    
+    self.tableView.backgroundView = nil;
+    NSString *BackImagePath = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
+	UIImage *BackImage = [[UIImage alloc] initWithContentsOfFile:BackImagePath];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:BackImage];
+    
+
     
     // Listen to notification
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
@@ -36,9 +45,10 @@
       //NSLog(@"Subscibed products= %@", appDelegate.SubscibedProducts);
     
     // create a toolbar where we can place some buttons
-    UIToolbar* toolbar = [[UIToolbar alloc]
-                          initWithFrame:CGRectMake(0, 0, 210, 45)];
-    [toolbar setBarStyle: UIBarStyleBlack];
+    TransparentToolBar* toolbar = [[TransparentToolBar alloc]
+                                   initWithFrame:CGRectMake(0, 0, 210, 45)];
+    
+
     
     
     // create an array for the buttons
@@ -58,17 +68,17 @@
     [buttons addObject:spacer];
     
     // Create Share image button
-    UIImage *ShareImage = [UIImage imageNamed:@"buttonbackgroud.png"];
-    //face.bounds = CGRectMake( 0, 0, ShareImage.size.width, ShareImage.size.height );
-    //[face setImage:ShareImage forState:UIControlStateNormal];
-    UIButton *face = [UIButton buttonWithType: UIButtonTypeRoundedRect];
-    [face setBackgroundImage:ShareImage forState:UIControlStateNormal];
-    face.bounds = CGRectMake( 0, 0, 70, 30 );
-    [face setTitle:@"Share" forState:UIControlStateNormal];
-    [face setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [face addTarget:self action:@selector(share:)forControlEvents:UIControlEventTouchUpInside];
+    /* UIButton *Share = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+     Share.bounds = CGRectMake( 0, 0, 70, 30 );
+     [Share setTitle:@"Share" forState:UIControlStateNormal];
+     [Share setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+     [Share addTarget:self action:@selector(share:)forControlEvents:UIControlEventTouchUpInside];
+     UIBarButtonItem *ShareButton = [[UIBarButtonItem alloc] initWithCustomView:Share];*/
+    UIBarButtonItem *ShareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style: UIBarButtonItemStyleBordered target:self action:@selector(share:)];
     
-    UIBarButtonItem *ShareButton = [[UIBarButtonItem alloc] initWithCustomView:face];
+    //UIBarButtonItem *ShareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style: UIBarButtonItemStyleBordered target:self //action:@selector(share:)];
+    
+
     
     
      [buttons addObject:ShareButton];
@@ -380,9 +390,9 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = nil;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:nil];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
@@ -402,11 +412,28 @@
     // Is it free?
     if ([obj Free] == YES){
        
-         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-         NSString* descriptiontxt = [obj VideoDescription];
-         NSString* FullDesciption = [descriptiontxt stringByAppendingString:@" - Free view"];
-        cell.detailTextLabel.text =FullDesciption;
-         cell.detailTextLabel.textColor = [UIColor blueColor];
+        NSString* descriptiontxt = [obj VideoDescription];
+        
+        
+        //NSString* FullDesciption = [descriptiontxt stringByAppendingString:@" - Free view"];
+        cell.detailTextLabel.text =descriptiontxt;
+        cell.detailTextLabel.textColor = [UIColor blueColor];
+        UIImage *FreeImage = [UIImage imageNamed:@"free.png"];
+        UIButton *btnFree = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+        if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown)
+        {
+            btnFree.frame = CGRectMake(650, 5, 72, 35);
+        }
+        else{
+            
+            btnFree.frame = CGRectMake(900, 5, 72, 35);
+        }
+        
+        [btnFree setBackgroundImage:FreeImage forState:UIControlStateNormal];
+        btnFree.tag = indexPath.row;
+        [btnFree addTarget:self action:@selector(ViewFree:) forControlEvents:UIControlEventTouchUpInside];
+        [cell addSubview:btnFree];
         
     }
     
@@ -414,7 +441,7 @@
         
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         NSString* descriptiontxt = [obj VideoDescription];
-         NSString* FullDesciption = @"";
+        NSString* FullDesciption = @"";
         // Check if we are in full subscription if so Change text to paid
         if(FullSubscription == TRUE){
             FullDesciption = [descriptiontxt stringByAppendingString:@" - Subscription Paid"];
@@ -422,14 +449,11 @@
         else {
             FullDesciption = [descriptiontxt stringByAppendingString:@" - Free gift if you share"];
         }
-
-       
         cell.detailTextLabel.text =FullDesciption;
         cell.detailTextLabel.textColor = [UIColor blueColor];
         
         
     }
-
     // Is user Subscribed?
     else if([obj Subcribed] == YES || FullSubscription == TRUE){
         
@@ -444,19 +468,35 @@
     else
     {
         
-         cell.accessoryType =  UITableViewCellAccessoryNone;
-          NSString* descriptiontxt = [obj VideoDescription];
-        NSString* FullDesciption = [descriptiontxt stringByAppendingString:@" - Subscribe"];
-         cell.detailTextLabel.text = FullDesciption;
-         cell.detailTextLabel.textColor = [UIColor redColor];
+        
+        NSString* descriptiontxt = [obj VideoDescription];
+        cell.detailTextLabel.text = descriptiontxt;
+        cell.detailTextLabel.textColor = [UIColor redColor];
+        
+        UIImage *FreeImage = [UIImage imageNamed:@"subscribe.png"];
+        UIButton *btnSubscribe = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+        if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown)
+        {
+            btnSubscribe.frame = CGRectMake(620, 5, 103, 35);
+        }
+        else{
+            
+            btnSubscribe.frame = CGRectMake(870, 5, 103, 35);
+        }
+        
+        [btnSubscribe setBackgroundImage:FreeImage forState:UIControlStateNormal];
+        btnSubscribe.tag = indexPath.row;
+        [btnSubscribe addTarget:self action:@selector(GoSubScribe:) forControlEvents:UIControlEventTouchUpInside];
+        [cell addSubview:btnSubscribe];
+        
     }
-   
+    
     
     
 	
 	
     return cell;
-	
 }
 
 
@@ -527,6 +567,41 @@
 
 }
 
+-(IBAction)ViewFree:(UIButton*)sender{
+    
+    int tag = sender.tag;
+    
+    ConfigObject *obj = [ArrayofConfigObjects objectAtIndex:tag];
+    
+    VideoPlayer *VP1 = [[VideoPlayer alloc] initWithNibName:nil bundle:nil];
+    VP1.FreeView = self;
+    VP1.VideoFileName =[NSString stringWithString:[obj M3u8]];
+    
+    [self.navigationController pushViewController:VP1 animated:YES];
+    
+    
+    
+}
+
+-(IBAction)GoSubScribe:(UIButton*)sender{
+    
+    int tag = sender.tag;
+    
+    ConfigObject *obj = [ArrayofConfigObjects objectAtIndex:tag];
+    
+    [self ConfigureProductList:[obj ProductID]];
+    
+    Buy *buyer = [[Buy alloc ]initWithNibName:nil bundle:nil];
+    buyer.ProductsToIstore = ProductIDs;
+    //NSLog(@"%@",ProductIDs);
+    [self.navigationController pushViewController:buyer animated:YES];
+    
+    
+    
+}
+
+
+
 -(void)ConfigureProductList:(NSString *)ProductID{
     
     ProductIDs = [[NSMutableArray alloc] init];
@@ -554,6 +629,14 @@
     
     
 }
+// For ios 6
+-(NSUInteger)supportedInterfaceOrientations{
+    
+    return UIInterfaceOrientationMaskAll;
+    
+    
+}
+//ios 5
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -610,7 +693,8 @@
 }
 
 - (IBAction)share:(id)sender{
-    UIButton *button = (UIButton*)sender;
+    UIBarButtonItem *Barbutton = (UIBarButtonItem*)sender;
+    UIView *button = [Barbutton valueForKey:@"view"];
     
     PopUpTableviewViewController *tableViewController = [[PopUpTableviewViewController alloc] initWithStyle:UITableViewStylePlain];
     
@@ -620,6 +704,9 @@
     [popover setPopoverContentSize:CGSizeMake(420, 380) animated:YES];
     
     [popover presentPopoverFromRect:CGRectMake(button.frame.size.width / 2, button.frame.size.height / 1, 1, 1) inView:button permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    
+    
+
     
     
 }
@@ -632,7 +719,8 @@
         [popover.delegate popoverControllerDidDismissPopover:self.popover];
         
     }
-    
+    [self.tableView reloadData];
+
 }
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
