@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "GANTracker.h"
 
+
 @implementation VideoPlayer
 
 @synthesize VideoFileName,ServerLocation,credential,protectionSpace,domain,ImageViewer1,moviePlayerViewController,FreeView;
@@ -123,6 +124,9 @@
 											 selector:@selector(movieFinishedCallback:)  
 												 name:MPMoviePlayerPlaybackDidFinishNotification  
 											   object:[moviePlayerViewController moviePlayer]];
+     NSError *_error = nil;
+        
+     [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&_error];
     
     [self presentMoviePlayerViewControllerAnimated:moviePlayerViewController];
     

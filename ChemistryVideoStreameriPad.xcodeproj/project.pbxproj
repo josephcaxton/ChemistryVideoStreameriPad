@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C1E10FF16403A37006DF210 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1E10FE16403A37006DF210 /* AVFoundation.framework */; };
 		7C5A9B4D15E24A7300FDAC4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5A9B4C15E24A7300FDAC4E /* UIKit.framework */; };
 		7C5A9B4F15E24A7300FDAC4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5A9B4E15E24A7300FDAC4E /* Foundation.framework */; };
 		7C5A9B5115E24A7300FDAC4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5A9B5015E24A7300FDAC4E /* CoreGraphics.framework */; };
@@ -152,6 +153,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C1E10FE16403A37006DF210 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7C5A9B4815E24A7300FDAC4E /* Chemistry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chemistry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5A9B4C15E24A7300FDAC4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7C5A9B4E15E24A7300FDAC4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -337,6 +339,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1E10FF16403A37006DF210 /* AVFoundation.framework in Frameworks */,
 				7C5A9C0115E258AC00FDAC4E /* libsqlite3.dylib in Frameworks */,
 				7C5A9BFF15E2588F00FDAC4E /* CFNetwork.framework in Frameworks */,
 				7C5A9BFD15E2588700FDAC4E /* MessageUI.framework in Frameworks */,
@@ -387,6 +390,7 @@
 				7C5A9C0215E258C200FDAC4E /* Reachability.h */,
 				7C5A9C0315E258C200FDAC4E /* Reachability.m */,
 				7C5A9C0015E258AC00FDAC4E /* libsqlite3.dylib */,
+				7C1E10FE16403A37006DF210 /* AVFoundation.framework */,
 				7C5A9BFE15E2588F00FDAC4E /* CFNetwork.framework */,
 				7C5A9BFC15E2588700FDAC4E /* MessageUI.framework */,
 				7C5A9BFA15E2587C00FDAC4E /* StoreKit.framework */,
