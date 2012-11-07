@@ -48,7 +48,8 @@ static NSString* const kAnalyticsAccountId = @"UA-34210077-1";
     DomainName = @"http://learnerscloud.com";
     
     
-    [window addSubview: tabBarController.view];
+    //[window addSubview: tabBarController.view];
+    [window setRootViewController:tabBarController];
 	[window makeKeyAndVisible];
     
     

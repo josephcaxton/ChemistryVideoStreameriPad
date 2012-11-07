@@ -48,6 +48,13 @@
 	
 }
 
+/*-(NSUInteger)supportedInterfaceOrientations{
+    
+    return UIInterfaceOrientationMaskAll;
+    
+    
+}*/
+
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
