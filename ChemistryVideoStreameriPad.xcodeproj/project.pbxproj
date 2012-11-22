@@ -113,8 +113,10 @@
 		7C7F9CE915E3D2CA000C4F4C /* 68.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7F9CA315E3D2C9000C4F4C /* 68.png */; };
 		7C7F9CEA15E3D2CA000C4F4C /* 69.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7F9CA415E3D2C9000C4F4C /* 69.png */; };
 		7C7F9CEB15E3D2CA000C4F4C /* 70.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7F9CA515E3D2C9000C4F4C /* 70.png */; };
-		7CA52FFC162FF09E005FACC4 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA52FFA162FF09E005FACC4 /* Icon-72@2x.png */; };
-		7CA52FFD162FF09E005FACC4 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA52FFB162FF09E005FACC4 /* Icon-Small-50@2x.png */; };
+		7C8F81A7165E7512004511A6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8F81A5165E7512004511A6 /* Icon-72.png */; };
+		7C8F81A8165E7512004511A6 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8F81A6165E7512004511A6 /* Icon-72@2x.png */; };
+		7C8F81AB165E7521004511A6 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8F81A9165E7521004511A6 /* Icon-Small-50.png */; };
+		7C8F81AC165E7521004511A6 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8F81AA165E7521004511A6 /* Icon-Small-50@2x.png */; };
 		7CA53003162FF38F005FACC4 /* website_promo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA52FFE162FF38F005FACC4 /* website_promo.png */; };
 		7CA53004162FF38F005FACC4 /* website_promo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA52FFF162FF38F005FACC4 /* website_promo@2x.png */; };
 		7CA53005162FF38F005FACC4 /* web_promo_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA53000162FF38F005FACC4 /* web_promo_btn.png */; };
@@ -147,14 +149,11 @@
 		7CA5303D162FFF84005FACC4 /* HowtouseVideoStreamer.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CA5303B162FFF84005FACC4 /* HowtouseVideoStreamer.pdf */; };
 		7CA5303E16301D20005FACC4 /* UnderlinedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA53037162FF5A6005FACC4 /* UnderlinedButton.m */; };
 		7CA5303F16301D20005FACC4 /* TransparentToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA53039162FF5A6005FACC4 /* TransparentToolBar.m */; };
-		7CCC134815E7A75E00894EFB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CCC134315E7A75E00894EFB /* Icon-72.png */; };
-		7CCC134915E7A75E00894EFB /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CCC134415E7A75E00894EFB /* Icon-Small-50.png */; };
-		7CCC134C15E7A75E00894EFB /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CCC134715E7A75E00894EFB /* iTunesArtwork.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7C1E10FE16403A37006DF210 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		7C5A9B4815E24A7300FDAC4E /* Chemistry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chemistry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C5A9B4815E24A7300FDAC4E /* GCSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCSE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5A9B4C15E24A7300FDAC4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7C5A9B4E15E24A7300FDAC4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C5A9B5015E24A7300FDAC4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -293,8 +292,10 @@
 		7C7F9CA315E3D2C9000C4F4C /* 68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 68.png; sourceTree = "<group>"; };
 		7C7F9CA415E3D2C9000C4F4C /* 69.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 69.png; sourceTree = "<group>"; };
 		7C7F9CA515E3D2C9000C4F4C /* 70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 70.png; sourceTree = "<group>"; };
-		7CA52FFA162FF09E005FACC4 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
-		7CA52FFB162FF09E005FACC4 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		7C8F81A5165E7512004511A6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		7C8F81A6165E7512004511A6 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		7C8F81A9165E7521004511A6 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		7C8F81AA165E7521004511A6 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
 		7CA52FFE162FF38F005FACC4 /* website_promo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = website_promo.png; sourceTree = "<group>"; };
 		7CA52FFF162FF38F005FACC4 /* website_promo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "website_promo@2x.png"; sourceTree = "<group>"; };
 		7CA53000162FF38F005FACC4 /* web_promo_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = web_promo_btn.png; sourceTree = "<group>"; };
@@ -329,9 +330,6 @@
 		7CA53039162FF5A6005FACC4 /* TransparentToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransparentToolBar.m; sourceTree = "<group>"; };
 		7CA5303A162FFF84005FACC4 /* LearnersCloudTermsonapps.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = LearnersCloudTermsonapps.pdf; sourceTree = "<group>"; };
 		7CA5303B162FFF84005FACC4 /* HowtouseVideoStreamer.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HowtouseVideoStreamer.pdf; sourceTree = "<group>"; };
-		7CCC134315E7A75E00894EFB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
-		7CCC134415E7A75E00894EFB /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
-		7CCC134715E7A75E00894EFB /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,7 +377,7 @@
 		7C5A9B4915E24A7300FDAC4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C5A9B4815E24A7300FDAC4E /* Chemistry.app */,
+				7C5A9B4815E24A7300FDAC4E /* GCSE.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -635,11 +633,10 @@
 				7CA53026162FF440005FACC4 /* hero_chemistry.png */,
 				7CA53027162FF440005FACC4 /* hero_chemistry@2x.png */,
 				7C5A9BCE15E2552100FDAC4E /* BlackBackGround.png */,
-				7CCC134315E7A75E00894EFB /* Icon-72.png */,
-				7CA52FFA162FF09E005FACC4 /* Icon-72@2x.png */,
-				7CCC134415E7A75E00894EFB /* Icon-Small-50.png */,
-				7CA52FFB162FF09E005FACC4 /* Icon-Small-50@2x.png */,
-				7CCC134715E7A75E00894EFB /* iTunesArtwork.png */,
+				7C8F81A5165E7512004511A6 /* Icon-72.png */,
+				7C8F81A6165E7512004511A6 /* Icon-72@2x.png */,
+				7C8F81A9165E7521004511A6 /* Icon-Small-50.png */,
+				7C8F81AA165E7521004511A6 /* Icon-Small-50@2x.png */,
 				7CA5302A162FF4A6005FACC4 /* icon_email_to_friend.png */,
 				7CA5302B162FF4A6005FACC4 /* icon_like_on_facebook.png */,
 				7CA5302C162FF4A6005FACC4 /* icon_share_on_twitter.png */,
@@ -666,7 +663,7 @@
 			);
 			name = ChemistryVideoStreameriPad;
 			productName = ChemistryVideoStreameriPad;
-			productReference = 7C5A9B4815E24A7300FDAC4E /* Chemistry.app */;
+			productReference = 7C5A9B4815E24A7300FDAC4E /* GCSE.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -775,11 +772,6 @@
 				7C7F9CE915E3D2CA000C4F4C /* 68.png in Resources */,
 				7C7F9CEA15E3D2CA000C4F4C /* 69.png in Resources */,
 				7C7F9CEB15E3D2CA000C4F4C /* 70.png in Resources */,
-				7CCC134815E7A75E00894EFB /* Icon-72.png in Resources */,
-				7CCC134915E7A75E00894EFB /* Icon-Small-50.png in Resources */,
-				7CCC134C15E7A75E00894EFB /* iTunesArtwork.png in Resources */,
-				7CA52FFC162FF09E005FACC4 /* Icon-72@2x.png in Resources */,
-				7CA52FFD162FF09E005FACC4 /* Icon-Small-50@2x.png in Resources */,
 				7CA53003162FF38F005FACC4 /* website_promo.png in Resources */,
 				7CA53004162FF38F005FACC4 /* website_promo@2x.png in Resources */,
 				7CA53005162FF38F005FACC4 /* web_promo_btn.png in Resources */,
@@ -810,6 +802,10 @@
 				7CA53035162FF4E2005FACC4 /* btn_videos_deselected.png in Resources */,
 				7CA5303C162FFF84005FACC4 /* LearnersCloudTermsonapps.pdf in Resources */,
 				7CA5303D162FFF84005FACC4 /* HowtouseVideoStreamer.pdf in Resources */,
+				7C8F81A7165E7512004511A6 /* Icon-72.png in Resources */,
+				7C8F81A8165E7512004511A6 /* Icon-72@2x.png in Resources */,
+				7C8F81AB165E7521004511A6 /* Icon-Small-50.png in Resources */,
+				7C8F81AC165E7521004511A6 /* Icon-Small-50@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,7 +912,7 @@
 					"\"$(SRCROOT)/facebook-ios-sdk\"",
 					"\"$(SRCROOT)\"",
 				);
-				PRODUCT_NAME = Chemistry;
+				PRODUCT_NAME = GCSE;
 				PROVISIONING_PROFILE = "2A93EE4A-ECF9-46D7-9D28-FA4C889F73B6";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
@@ -935,7 +931,7 @@
 					"\"$(SRCROOT)/facebook-ios-sdk\"",
 					"\"$(SRCROOT)\"",
 				);
-				PRODUCT_NAME = Chemistry;
+				PRODUCT_NAME = GCSE;
 				PROVISIONING_PROFILE = "D6F06DB0-57F3-4DD2-9E70-82AA514CB83D";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
