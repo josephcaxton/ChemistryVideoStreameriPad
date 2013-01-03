@@ -117,7 +117,7 @@
 	// Copy or Update the VideoConfig File;
    
     NSString *domain = appDelegate.DomainName;
-    NSString *queryFeed = [NSString stringWithFormat:@"%@/iosStream/Chemistry/ChemistryConfig.xml",domain]; 
+    NSString *queryFeed = [NSString stringWithFormat:@"%@/iosStreamv2/Chemistry/ChemistryConfig.xml",domain];
     NSString *Dir = [appDelegate.applicationDocumentsDirectory stringByAppendingPathComponent:@"ChemistryConfig.xml"];
     
          
@@ -265,7 +265,7 @@
     
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     NSString *domain = appDelegate.DomainName;
-    NSString *queryFeed = [NSString stringWithFormat:@"%@/iosStream/Chemistry/ChemistryConfig.xml", domain];
+    NSString *queryFeed = [NSString stringWithFormat:@"%@/iosStreamv2/Chemistry/ChemistryConfig.xml", domain];
 	NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:queryFeed]];
     NSURLResponse *resp = nil; 
     NSError *err = nil;
