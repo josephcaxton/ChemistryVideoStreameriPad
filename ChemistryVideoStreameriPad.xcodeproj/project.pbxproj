@@ -970,7 +970,8 @@
 		7C5A9B7615E24A7300FDAC4E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Theta Computer Services Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChemistryVideoStreameriPad/ChemistryVideoStreameriPad-Prefix.pch";
 				INFOPLIST_FILE = "ChemistryVideoStreameriPad/ChemistryVideoStreameriPad-Info.plist";
@@ -980,7 +981,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = GCSE;
-				PROVISIONING_PROFILE = "D6F06DB0-57F3-4DD2-9E70-82AA514CB83D";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};

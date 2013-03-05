@@ -131,7 +131,7 @@
     [BtnTransfermysubscription addTarget:self action:@selector(TransferSubscription:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [FirstView addSubview:BtnTransfermysubscription];
+    //[FirstView addSubview:BtnTransfermysubscription];
     
     
     
