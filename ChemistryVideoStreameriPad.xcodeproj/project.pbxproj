@@ -117,8 +117,6 @@
 		7C8F81B9165E776C004511A6 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8F81B7165E776C004511A6 /* Icon-72@2x.png */; };
 		7C8F81BC165E777F004511A6 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8F81BA165E777F004511A6 /* Icon-Small-50.png */; };
 		7C8F81BD165E777F004511A6 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8F81BB165E777F004511A6 /* Icon-Small-50@2x.png */; };
-		7CA53003162FF38F005FACC4 /* website_promo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA52FFE162FF38F005FACC4 /* website_promo.png */; };
-		7CA53004162FF38F005FACC4 /* website_promo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA52FFF162FF38F005FACC4 /* website_promo@2x.png */; };
 		7CA53005162FF38F005FACC4 /* web_promo_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA53000162FF38F005FACC4 /* web_promo_btn.png */; };
 		7CA53006162FF38F005FACC4 /* buy_now.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA53001162FF38F005FACC4 /* buy_now.png */; };
 		7CA53007162FF38F005FACC4 /* buy_now@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA53002162FF38F005FACC4 /* buy_now@2x.png */; };
@@ -146,7 +144,6 @@
 		7CA53033162FF4A6005FACC4 /* icon_share_on_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA5302E162FF4A6005FACC4 /* icon_share_on_facebook.png */; };
 		7CA53035162FF4E2005FACC4 /* btn_videos_deselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA53034162FF4E2005FACC4 /* btn_videos_deselected.png */; };
 		7CA5303C162FFF84005FACC4 /* LearnersCloudTermsonapps.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CA5303A162FFF84005FACC4 /* LearnersCloudTermsonapps.pdf */; };
-		7CA5303D162FFF84005FACC4 /* HowtouseVideoStreamer.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CA5303B162FFF84005FACC4 /* HowtouseVideoStreamer.pdf */; };
 		7CA5303E16301D20005FACC4 /* UnderlinedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA53037162FF5A6005FACC4 /* UnderlinedButton.m */; };
 		7CA5303F16301D20005FACC4 /* TransparentToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA53039162FF5A6005FACC4 /* TransparentToolBar.m */; };
 		7CD6D9B316974627004BCB15 /* GCSE-Chemistry-WJEC-Examination-Coverage.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CD6D9AD16974627004BCB15 /* GCSE-Chemistry-WJEC-Examination-Coverage.pdf */; };
@@ -158,6 +155,9 @@
 		7CD6D9BE16974765004BCB15 /* nav_btn_coverage_deselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD6D9BD16974765004BCB15 /* nav_btn_coverage_deselected.png */; };
 		7CD6D9BF16974780004BCB15 /* Coverage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD6D9BA1697463F004BCB15 /* Coverage.m */; };
 		7CD6D9C016974780004BCB15 /* CoverageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD6D9BC1697463F004BCB15 /* CoverageViewer.m */; };
+		7CEA7D1216FC749500DB5C0B /* website_promo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA7D1016FC749500DB5C0B /* website_promo.png */; };
+		7CEA7D1316FC749500DB5C0B /* website_promo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA7D1116FC749500DB5C0B /* website_promo@2x.png */; };
+		7CEA7D1516FC756500DB5C0B /* HowtouseVideoStreamer.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA7D1416FC756500DB5C0B /* HowtouseVideoStreamer.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -305,8 +305,6 @@
 		7C8F81B7165E776C004511A6 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		7C8F81BA165E777F004511A6 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		7C8F81BB165E777F004511A6 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
-		7CA52FFE162FF38F005FACC4 /* website_promo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = website_promo.png; sourceTree = "<group>"; };
-		7CA52FFF162FF38F005FACC4 /* website_promo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "website_promo@2x.png"; sourceTree = "<group>"; };
 		7CA53000162FF38F005FACC4 /* web_promo_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = web_promo_btn.png; sourceTree = "<group>"; };
 		7CA53001162FF38F005FACC4 /* buy_now.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy_now.png; sourceTree = "<group>"; };
 		7CA53002162FF38F005FACC4 /* buy_now@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy_now@2x.png"; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 		7CA53038162FF5A6005FACC4 /* TransparentToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransparentToolBar.h; sourceTree = "<group>"; };
 		7CA53039162FF5A6005FACC4 /* TransparentToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransparentToolBar.m; sourceTree = "<group>"; };
 		7CA5303A162FFF84005FACC4 /* LearnersCloudTermsonapps.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = LearnersCloudTermsonapps.pdf; sourceTree = "<group>"; };
-		7CA5303B162FFF84005FACC4 /* HowtouseVideoStreamer.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HowtouseVideoStreamer.pdf; sourceTree = "<group>"; };
 		7CD6D9AD16974627004BCB15 /* GCSE-Chemistry-WJEC-Examination-Coverage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "GCSE-Chemistry-WJEC-Examination-Coverage.pdf"; sourceTree = "<group>"; };
 		7CD6D9AE16974627004BCB15 /* GCSE-Chemistry-OCR-Gateway-B-Examination-Coverage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "GCSE-Chemistry-OCR-Gateway-B-Examination-Coverage.pdf"; sourceTree = "<group>"; };
 		7CD6D9AF16974627004BCB15 /* GCSE-Chemistry-OCR-21st-Century-A-Examination-Coverage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "GCSE-Chemistry-OCR-21st-Century-A-Examination-Coverage.pdf"; sourceTree = "<group>"; };
@@ -350,6 +347,9 @@
 		7CD6D9BB1697463F004BCB15 /* CoverageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoverageViewer.h; sourceTree = "<group>"; };
 		7CD6D9BC1697463F004BCB15 /* CoverageViewer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoverageViewer.m; sourceTree = "<group>"; };
 		7CD6D9BD16974765004BCB15 /* nav_btn_coverage_deselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_btn_coverage_deselected.png; sourceTree = "<group>"; };
+		7CEA7D1016FC749500DB5C0B /* website_promo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = website_promo.png; sourceTree = "<group>"; };
+		7CEA7D1116FC749500DB5C0B /* website_promo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "website_promo@2x.png"; sourceTree = "<group>"; };
+		7CEA7D1416FC756500DB5C0B /* HowtouseVideoStreamer.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HowtouseVideoStreamer.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -559,7 +559,7 @@
 				7C7F9CA415E3D2C9000C4F4C /* 69.png */,
 				7C7F9CA515E3D2C9000C4F4C /* 70.png */,
 				7CA5303A162FFF84005FACC4 /* LearnersCloudTermsonapps.pdf */,
-				7CA5303B162FFF84005FACC4 /* HowtouseVideoStreamer.pdf */,
+				7CEA7D1416FC756500DB5C0B /* HowtouseVideoStreamer.pdf */,
 			);
 			name = VideoImages;
 			sourceTree = "<group>";
@@ -636,10 +636,10 @@
 		7C5A9BC715E254E400FDAC4E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7CA52FFE162FF38F005FACC4 /* website_promo.png */,
-				7CA52FFF162FF38F005FACC4 /* website_promo@2x.png */,
 				7CA53000162FF38F005FACC4 /* web_promo_btn.png */,
 				7CA53001162FF38F005FACC4 /* buy_now.png */,
+				7CEA7D1016FC749500DB5C0B /* website_promo.png */,
+				7CEA7D1116FC749500DB5C0B /* website_promo@2x.png */,
 				7CA53002162FF38F005FACC4 /* buy_now@2x.png */,
 				7CA53008162FF3A0005FACC4 /* free.png */,
 				7CA53009162FF3A0005FACC4 /* subscribe.png */,
@@ -811,8 +811,6 @@
 				7C7F9CE915E3D2CA000C4F4C /* 68.png in Resources */,
 				7C7F9CEA15E3D2CA000C4F4C /* 69.png in Resources */,
 				7C7F9CEB15E3D2CA000C4F4C /* 70.png in Resources */,
-				7CA53003162FF38F005FACC4 /* website_promo.png in Resources */,
-				7CA53004162FF38F005FACC4 /* website_promo@2x.png in Resources */,
 				7CA53005162FF38F005FACC4 /* web_promo_btn.png in Resources */,
 				7CA53006162FF38F005FACC4 /* buy_now.png in Resources */,
 				7CA53007162FF38F005FACC4 /* buy_now@2x.png in Resources */,
@@ -840,7 +838,6 @@
 				7CA53033162FF4A6005FACC4 /* icon_share_on_facebook.png in Resources */,
 				7CA53035162FF4E2005FACC4 /* btn_videos_deselected.png in Resources */,
 				7CA5303C162FFF84005FACC4 /* LearnersCloudTermsonapps.pdf in Resources */,
-				7CA5303D162FFF84005FACC4 /* HowtouseVideoStreamer.pdf in Resources */,
 				7C8F81B8165E776C004511A6 /* Icon-72.png in Resources */,
 				7C8F81B9165E776C004511A6 /* Icon-72@2x.png in Resources */,
 				7C8F81BC165E777F004511A6 /* Icon-Small-50.png in Resources */,
@@ -852,6 +849,9 @@
 				7CD6D9B716974627004BCB15 /* GCSE-Chemistry-CCEA-Examination-Coverage.pdf in Resources */,
 				7CD6D9B816974627004BCB15 /* GCSE-Chemistry-AQA-Examination-Coverage.pdf in Resources */,
 				7CD6D9BE16974765004BCB15 /* nav_btn_coverage_deselected.png in Resources */,
+				7CEA7D1216FC749500DB5C0B /* website_promo.png in Resources */,
+				7CEA7D1316FC749500DB5C0B /* website_promo@2x.png in Resources */,
+				7CEA7D1516FC756500DB5C0B /* HowtouseVideoStreamer.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

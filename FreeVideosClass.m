@@ -263,12 +263,14 @@
 }
 
 
--(BOOL)ShouldIDownloadOrNot:(NSString*)urllPath:(NSString*)LocalFileLocation{
+-(BOOL)ShouldIDownloadOrNot:(NSString*) urllPath :(NSString*)LocalFileLocation{
     
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-   BOOL ReturnVal =  [appDelegate downloadFileIfUpdated:urllPath:LocalFileLocation];
+    BOOL ReturnVal =  [appDelegate downloadfileifUpdated:urllPath location:LocalFileLocation];
     
     return ReturnVal;
+    
+
    
     
     
@@ -349,7 +351,7 @@
             obj.Free = NO; 
         }
         obj.Subject = Subject;
-        obj.M3u8 = M3u8;
+        obj.M3u8 = [M3u8 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
         if ([Sociallyfree isEqualToString: @"1"]){
             
