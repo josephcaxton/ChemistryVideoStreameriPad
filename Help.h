@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface Help : UIViewController <UITableViewDataSource, UITableViewDelegate>{
-    
+@interface Help : UIViewController <UITableViewDataSource, UITableViewDelegate,MFMailComposeViewControllerDelegate>{
     NSMutableArray *listofItems;
     UIButton *LCButton;
     UITableView *FirstTable;
@@ -21,6 +21,5 @@
 @property (nonatomic, assign)  CGRect FirstViewframe;
 
 - (void)WebsitebuttonPressed;
-
 
 @end

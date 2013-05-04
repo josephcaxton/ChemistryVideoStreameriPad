@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MessageUI/MessageUI.h>
 #import "PopUpTableviewViewController.h"
-@interface FreeVideosClass :  UITableViewController  <UITableViewDataSource, UITableViewDelegate,UIAlertViewDelegate,MFMailComposeViewControllerDelegate,UISearchBarDelegate>{
+@interface FreeVideosClass :  UITableViewController  <UITableViewDataSource, UITableViewDelegate,UIAlertViewDelegate,UISearchBarDelegate>{
+    
     
     NSMutableArray *ArrayofConfigObjects;
     NSMutableArray *filteredArrayofConfigObjects;
@@ -19,7 +19,9 @@
     BOOL FullSubscription;
     UIPopoverController *popover;
     UISearchBar  *mySearchBar;
-
+    NSMutableArray* buttons;
+    UIBarButtonItem *SubscribeButton;
+    UIBarButtonItem *ShareButton;
     
 }
 
@@ -31,6 +33,10 @@
 @property (nonatomic, assign) BOOL FullSubscription;
 @property (nonatomic, retain)  UIPopoverController *popover;
 @property (nonatomic, retain) UISearchBar *mySearchBar;
+@property (nonatomic, retain) NSMutableArray* buttons;
+@property (nonatomic, retain) UIBarButtonItem *SubscribeButton;
+@property (nonatomic, retain) UIBarButtonItem *ShareButton;
+
 
 
 -(BOOL)ShouldIDownloadOrNot:(NSString*) urllPath :(NSString*)LocalFileLocation;

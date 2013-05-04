@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C60</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -50,7 +50,6 @@
 				<int key="NSvFlags">292</int>
 				<string key="NSFrameSize">{768, 1024}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -72,12 +71,12 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="970530597">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="855814790">
-						<string key="IBUITitle">Videos</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="288179365">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="435182845">
+						<string key="IBUITitle">Help</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">btn_videos_deselected.png</string>
+							<string key="NSResourceName">60-signpost.png</string>
 						</object>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
@@ -91,7 +90,7 @@
 					</object>
 					<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="247410822">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="27330468">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{768, 44}</string>
@@ -102,12 +101,13 @@
 					</object>
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="837716297">
+						<object class="IBUIViewController" id="259363434">
 							<reference key="IBUIToolbarItems" ref="0"/>
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="597626070">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="760538298">
+								<string key="IBUITitle">Help</string>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="970530597"/>
+							<reference key="IBUIParentViewController" ref="288179365"/>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -119,7 +119,49 @@
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<reference ref="970530597"/>
+					<object class="IBUINavigationController" id="970530597">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="855814790">
+							<string key="IBUITitle">Videos</string>
+							<object class="NSCustomResource" key="IBUIImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">btn_videos_deselected.png</string>
+							</object>
+							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						</object>
+						<reference key="IBUIToolbarItems" ref="0"/>
+						<reference key="IBUIParentViewController" ref="395037606"/>
+						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
+							<int key="IBUIInterfaceOrientation">1</int>
+							<int key="interfaceOrientation">1</int>
+						</object>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<bool key="IBUIHorizontal">NO</bool>
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="247410822">
+							<nil key="NSNextResponder"/>
+							<int key="NSvFlags">256</int>
+							<string key="NSFrameSize">{768, 44}</string>
+							<bool key="IBUIOpaque">NO</bool>
+							<bool key="IBUIClipsSubviews">YES</bool>
+							<bool key="IBUIMultipleTouchEnabled">YES</bool>
+							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						</object>
+						<object class="NSMutableArray" key="IBUIViewControllers">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBUIViewController" id="837716297">
+								<reference key="IBUIToolbarItems" ref="0"/>
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="597626070">
+									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								</object>
+								<reference key="IBUIParentViewController" ref="970530597"/>
+								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
+									<int key="IBUIInterfaceOrientation">1</int>
+									<int key="interfaceOrientation">1</int>
+								</object>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<bool key="IBUIHorizontal">NO</bool>
+							</object>
+						</object>
+					</object>
 					<object class="IBUINavigationController" id="985436170">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="432812445">
 							<string key="IBUITitle">Coverage</string>
@@ -161,7 +203,7 @@
 							<object class="IBUIViewController" id="474384619">
 								<reference key="IBUIToolbarItems" ref="0"/>
 								<object class="IBUINavigationItem" key="IBUINavigationItem" id="1060363056">
-									<string key="IBUITitle">Results</string>
+									<string key="IBUITitle">Coverage</string>
 									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								</object>
 								<reference key="IBUIParentViewController" ref="985436170"/>
@@ -174,56 +216,12 @@
 							</object>
 						</object>
 					</object>
-					<object class="IBUINavigationController" id="288179365">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="435182845">
-							<string key="IBUITitle">Help</string>
-							<object class="NSCustomResource" key="IBUIImage">
-								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">60-signpost.png</string>
-							</object>
-							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						</object>
-						<reference key="IBUIToolbarItems" ref="0"/>
-						<reference key="IBUIParentViewController" ref="395037606"/>
-						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-							<int key="IBUIInterfaceOrientation">1</int>
-							<int key="interfaceOrientation">1</int>
-						</object>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="27330468">
-							<nil key="NSNextResponder"/>
-							<int key="NSvFlags">256</int>
-							<string key="NSFrameSize">{768, 44}</string>
-							<bool key="IBUIOpaque">NO</bool>
-							<bool key="IBUIClipsSubviews">YES</bool>
-							<bool key="IBUIMultipleTouchEnabled">YES</bool>
-							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						</object>
-						<object class="NSMutableArray" key="IBUIViewControllers">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="259363434">
-								<reference key="IBUIToolbarItems" ref="0"/>
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="760538298">
-									<string key="IBUITitle">Help</string>
-									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								</object>
-								<reference key="IBUIParentViewController" ref="288179365"/>
-								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-									<int key="IBUIInterfaceOrientation">1</int>
-									<int key="interfaceOrientation">1</int>
-								</object>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<bool key="IBUIHorizontal">NO</bool>
-							</object>
-						</object>
-					</object>
 					<object class="IBUINavigationController" id="41588126">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="915300184">
-							<string key="IBUITitle">Buy</string>
+							<string key="IBUITitle">Trailers</string>
 							<object class="NSCustomResource" key="IBUIImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">80-shopping-cart.png</string>
+								<string key="NSResourceName">70-tv.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						</object>
@@ -249,7 +247,7 @@
 							<object class="IBUIViewController" id="724725137">
 								<reference key="IBUIToolbarItems" ref="0"/>
 								<object class="IBUINavigationItem" key="IBUINavigationItem" id="818691661">
-									<string key="IBUITitle">Buy</string>
+									<string key="IBUITitle">Trailers</string>
 									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								</object>
 								<reference key="IBUIParentViewController" ref="41588126"/>
@@ -262,6 +260,7 @@
 							</object>
 						</object>
 					</object>
+					<reference ref="288179365"/>
 					<object class="IBUINavigationController" id="191445141">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="970708362">
 							<string key="IBUITitle">Videos</string>
@@ -356,7 +355,6 @@
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 975}, {768, 49}}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSNextKeyView"/>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
 						<bytes key="NSWhite">MCAwAA</bytes>
@@ -437,8 +435,8 @@
 							<reference ref="970530597"/>
 							<reference ref="288179365"/>
 							<reference ref="985436170"/>
-							<reference ref="41588126"/>
 							<reference ref="191445141"/>
+							<reference ref="41588126"/>
 							<reference ref="275014766"/>
 						</object>
 						<reference key="parent" ref="0"/>
@@ -515,6 +513,7 @@
 						<int key="objectID">29</int>
 						<reference key="object" ref="1060363056"/>
 						<reference key="parent" ref="474384619"/>
+						<string key="objectName">Navigation Item - Coverage</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">30</int>
@@ -571,11 +570,13 @@
 							<reference ref="916100478"/>
 						</object>
 						<reference key="parent" ref="395037606"/>
+						<string key="objectName">Navigation Controller - Trailers</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">57</int>
 						<reference key="object" ref="915300184"/>
 						<reference key="parent" ref="41588126"/>
+						<string key="objectName">Tab Bar Item - Share</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">58</int>
@@ -590,6 +591,7 @@
 						<int key="objectID">59</int>
 						<reference key="object" ref="818691661"/>
 						<reference key="parent" ref="724725137"/>
+						<string key="objectName">Navigation Item - Trailers</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">60</int>
@@ -702,6 +704,7 @@
 					<string>56.IBPluginDependency</string>
 					<string>57.IBPluginDependency</string>
 					<string>58.CustomClassName</string>
+					<string>58.IBAttributePlaceholdersKey</string>
 					<string>58.IBPluginDependency</string>
 					<string>59.IBPluginDependency</string>
 					<string>60.IBPluginDependency</string>
@@ -751,7 +754,12 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>Buy</string>
+					<string>LearnersCloudSamplesVideos</string>
+					<object class="NSMutableDictionary">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<reference key="dict.sortedKeys" ref="0"/>
+						<reference key="dict.values" ref="0"/>
+					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -801,7 +809,7 @@
 				<string>20-gear2.png</string>
 				<string>45-movie1.png</string>
 				<string>60-signpost.png</string>
-				<string>80-shopping-cart.png</string>
+				<string>70-tv.png</string>
 				<string>btn_videos_deselected.png</string>
 				<string>nav_btn_coverage_deselected.png</string>
 			</object>
@@ -810,7 +818,7 @@
 				<string>{26, 28}</string>
 				<string>{19, 25}</string>
 				<string>{22, 28}</string>
-				<string>{26, 19}</string>
+				<string>{24, 24}</string>
 				<string>{31, 34}</string>
 				<string>{24, 24}</string>
 			</object>
