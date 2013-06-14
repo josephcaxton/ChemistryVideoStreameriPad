@@ -675,53 +675,6 @@
 }
 
 
--(IBAction)ReportProblem:(id)sender{
-	
-	if ([MFMailComposeViewController canSendMail]) {
-        
-        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        NSString *DeviceID = [prefs stringForKey:@"LCUIID"];
-        
-        NSArray *SendTo = [NSArray arrayWithObjects:@"support@LearnersCloud.com",nil];
-        
-        MFMailComposeViewController *SendMailcontroller = [[MFMailComposeViewController alloc]init];
-        SendMailcontroller.mailComposeDelegate = self;
-        [SendMailcontroller setToRecipients:SendTo];
-        [SendMailcontroller setSubject:[NSString stringWithFormat:@"%@ Chemistry video streaming iPad",DeviceID]];
-        
-        [SendMailcontroller setMessageBody:[NSString stringWithFormat:@"Add message here "] isHTML:NO];
-        [self presentModalViewController:SendMailcontroller animated:YES];
-        
-		
-	}
-	
-	else {
-		UIAlertView *Alert = [[UIAlertView alloc] initWithTitle: @"Cannot send mail" 
-                                                        message: @"Device is unable to send email in its current state. Configure email" delegate: self 
-                                              cancelButtonTitle: @"Ok" otherButtonTitles: nil];
-		
-		
-		
-		[Alert show];
-		
-		
-	}
-    
-	
-}
-
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
-	
-	
-	[self becomeFirstResponder];
-	[self dismissModalViewControllerAnimated:YES];
-	
-	
-	
-	
-}
-
 - (IBAction)share:(id)sender{
     UIBarButtonItem *Barbutton = (UIBarButtonItem*)sender;
     UIView *button = [Barbutton valueForKey:@"view"];
