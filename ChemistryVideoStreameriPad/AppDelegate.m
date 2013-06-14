@@ -27,6 +27,8 @@ static NSString* const kAnalyticsAccountId = @"UA-34210077-1";
 @synthesize tabBarController;
 @synthesize SecondThread,SelectProductID,buyScreen,DomainName,SubscriptionStatusData,PassageFlag,EmailFlag,UserEmail,DoesUserHaveEmail,AccessAll,m_facebook;
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
@@ -516,6 +518,8 @@ static NSString* const kAnalyticsAccountId = @"UA-34210077-1";
     // NSString *Raw_DeviceToken = [NSString stringWithFormat:@"%@",deviceToken];
     
    // NSString *DeviceUDID = [NSString stringWithFormat:@"%@",[UIDevice currentDevice].uniqueIdentifier];
+    // We don't support notifiation on < ios any more
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")){
     NSString *DeviceUDID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     
     NSString *DeviceTokenRemoveCh1 = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
@@ -535,10 +539,11 @@ static NSString* const kAnalyticsAccountId = @"UA-34210077-1";
     conn = [[NSURLConnection alloc] initWithRequest:req delegate:self];
     if (conn) {
         
-    } 
+    }
+    }
 }
 
-- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err { 
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
     
     NSString *str = [NSString stringWithFormat: @"Error: %@", err];
     NSLog(@"%@",str);    

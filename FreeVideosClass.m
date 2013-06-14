@@ -633,6 +633,9 @@
     
     ProductIDs = [[NSMutableArray alloc] init];
     
+    NSString* OneWeek = @"Chemistry1week";    //[ProductID stringByAppendingString:@"1week"]; // fixing a naming problem here i made a misake on itunes
+    [ProductIDs addObject:OneWeek];
+    
     NSString* OneMonth = [ProductID stringByAppendingString:@"1month"];
     [ProductIDs addObject:OneMonth];
     
