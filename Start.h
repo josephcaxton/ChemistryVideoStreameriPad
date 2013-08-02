@@ -28,6 +28,13 @@
     NSMutableData *ReponseFromServer;
     BOOL PassageFlag;
     NSString *LoginTitle;
+    
+    UIImage *LoginImage;
+    UIImage *LogoutImage;
+    UIButton *LoginLogoutbtn;
+    
+    
+
 }
 
 @property (nonatomic, retain) UIView *FirstView;
@@ -48,6 +55,12 @@
 @property (nonatomic, assign) BOOL PassageFlag;
 @property (nonatomic, retain)  UIButton *WhichButton;
 @property (nonatomic, retain)  NSString *LoginTitle;
+@property (nonatomic, retain)  UIImage *LoginImage;
+@property (nonatomic, retain)  UIImage *LogoutImage;
+@property (nonatomic, retain)  UIButton *LoginLogoutbtn;
+
+
+
 
 -(IBAction)ViewFreeVideos:(id)sender;
 -(IBAction)TransferSubscription:(id)sender;

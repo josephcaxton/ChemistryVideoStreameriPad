@@ -14,7 +14,7 @@
 
 @implementation Start
 
-@synthesize FirstView,FreeVideos,BtnTransfermysubscription,RentaVideo,Image,ImageView,UsernameText,PasswordText,TextField,ReponseFromServer,PassageFlag,LoginViaLearnersCloud,WhichButton,LoginTitle,TVHeaderImage,TVHeaderImageView;
+@synthesize FirstView,FreeVideos,BtnTransfermysubscription,RentaVideo,Image,ImageView,UsernameText,PasswordText,TextField,ReponseFromServer,PassageFlag,LoginViaLearnersCloud,WhichButton,LoginTitle,TVHeaderImage,TVHeaderImageView,LoginImage,LogoutImage,LoginLogoutbtn;
 
 #define SCREEN_WIDTH  768    
 #define SCREEN_HEIGHT 950
@@ -37,18 +37,20 @@
     [label sizeToFit];
     
     
-    
-    self.navigationItem.backBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"Back"
-                                     style:UIBarButtonItemStyleBordered
-                                    target:nil
-                                    action:nil];
 
     // Header
     
     NSString *HeaderLocation = [[NSBundle mainBundle] pathForResource:@"header_bar" ofType:@"png"];
     UIImage *HeaderBackImage = [[UIImage alloc] initWithContentsOfFile:HeaderLocation];
     [self.navigationController.navigationBar setBackgroundImage:HeaderBackImage forBarMetrics:UIBarMetricsDefault];
+    
+    NSString *LoginImagePath = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"png"];
+    LoginImage = [[UIImage alloc] initWithContentsOfFile:LoginImagePath];
+    
+    
+    
+    NSString *LogoutImagePath = [[NSBundle mainBundle] pathForResource:@"logout" ofType:@"png"];
+    LogoutImage = [[UIImage alloc] initWithContentsOfFile:LogoutImagePath];
     
 
     
@@ -62,11 +64,11 @@
      LoginViaLearnersCloud = [[UIBarButtonItem alloc]initWithImage:LoginImage style:UIBarButtonItemStylePlain target:self action:@selector(TransferSubscription:)]; */
     
     
-    LoginViaLearnersCloud = [[UIBarButtonItem alloc] initWithTitle:@"Login" style: UIBarButtonItemStyleBordered target:self action:@selector(TransferSubscription:)];
+    //LoginViaLearnersCloud = [[UIBarButtonItem alloc] initWithTitle:@"Login" style: UIBarButtonItemStyleBordered target:self action:@selector(TransferSubscription:)];
     //This will only worl on ios 5 up
     //[LoginViaLearnersCloud setTintColor:[UIColor whiteColor]];
     //[LoginViaLearnersCloud setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIColor blackColor], UITextAttributeFont,nil] forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = LoginViaLearnersCloud;
+    //self.navigationItem.rightBarButtonItem = LoginViaLearnersCloud;
     
     
     // We need to change the color of the Buttons using images... Which means we need to move away from using button.text on decisions. May be next version
@@ -146,25 +148,53 @@
     [super viewWillAppear:animated];
     
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
     if(appDelegate.UserEmail == nil){
         
-        LoginTitle =@"Login";
-        [LoginViaLearnersCloud setTarget:self];
-        [LoginViaLearnersCloud setAction:@selector(TransferSubscription:)];
-        LoginViaLearnersCloud.title = @"Login";
+        self.navigationItem.rightBarButtonItem = nil;
+        LoginLogoutbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [LoginLogoutbtn setBackgroundImage:LoginImage forState:UIControlStateNormal];
+        [LoginLogoutbtn addTarget:self action:@selector(TransferSubscription:) forControlEvents:UIControlEventTouchUpInside];
+        LoginLogoutbtn.frame=CGRectMake(0.0, 0.0, 60.0, 40.0);
+        LoginViaLearnersCloud = [[UIBarButtonItem alloc] initWithCustomView:LoginLogoutbtn];
+        LoginViaLearnersCloud.tag  = 1;
+        //LoginViaLearnersCloud.title = @"Login";
         self.navigationItem.rightBarButtonItem = LoginViaLearnersCloud;
     }
     
     else {
         
-        LoginTitle =@"Logout";
-        [LoginViaLearnersCloud setTarget:self];
-        [LoginViaLearnersCloud setAction:@selector(LogoutUser:)];
-        LoginViaLearnersCloud.title = @"Logout";
+        self.navigationItem.rightBarButtonItem = nil;
+        LoginLogoutbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [LoginLogoutbtn setBackgroundImage:LogoutImage forState:UIControlStateNormal];
+        [LoginLogoutbtn addTarget:self action:@selector(LogoutUser:) forControlEvents:UIControlEventTouchUpInside];
+        LoginLogoutbtn.frame=CGRectMake(0.0, 0.0, 71.0, 40.0);
+        LoginViaLearnersCloud = [[UIBarButtonItem alloc] initWithCustomView:LoginLogoutbtn];
+        LoginViaLearnersCloud.tag  = 2;
         self.navigationItem.rightBarButtonItem = LoginViaLearnersCloud;
     }
     
+    
+    // Check if we are suppose to show login
+    if(appDelegate.FlagToLoginOrLogout == [NSNumber numberWithInt:1]){
         
+        appDelegate.FlagToLoginOrLogout = [NSNumber numberWithInt:0];
+        LoginViaLearnersCloud.tag = 1;
+        [self TransferSubscription:LoginViaLearnersCloud];
+        
+    }
+    //Check if we are suppose to logout
+    else if (appDelegate.FlagToLoginOrLogout == [NSNumber numberWithInt:2]){
+        
+        appDelegate.FlagToLoginOrLogout = [NSNumber numberWithInt:0];
+        LoginViaLearnersCloud.tag = 2;
+        [self LogoutUser:LoginViaLearnersCloud];
+        
+    }
+    
+    
+    
+    
     
 }
 
@@ -198,7 +228,7 @@
 }
 
 -(IBAction)LogoutUser:(id)sender{
-    if ([LoginTitle isEqualToString:@"Login"]) {
+    if (LoginViaLearnersCloud.tag == 1) {
         
         
     }
@@ -222,7 +252,7 @@
 
 
 -(IBAction)TransferSubscription:(id)sender{
-    if ([LoginTitle isEqualToString:@"Logout"]) {
+    if (LoginViaLearnersCloud.tag == 2) {
          
         
     }
@@ -244,6 +274,14 @@
     UsernameText.enablesReturnKeyAutomatically = YES;
     [UsernameText setReturnKeyType:UIReturnKeyDone];
     [UsernameText setDelegate:self];
+        // Do we have stored UseName if so let add to box
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        NSString *StoredUserName = [prefs stringForKey:@"LCUserName"];
+        if ([StoredUserName length] > 1) {
+            UsernameText.text = StoredUserName;
+        }
+        
+
     [alertView addSubview:UsernameText];
     
     // Adds a password Field
@@ -306,10 +344,14 @@
     
     else if(actionSheet.tag == 1111) {
         
-        LoginTitle = @"Login";
-        [LoginViaLearnersCloud setTarget:self];
-        [LoginViaLearnersCloud setAction:@selector(TransferSubscription:)];
-        LoginViaLearnersCloud.title = @"Login";
+        self.navigationItem.rightBarButtonItem = nil;
+        LoginLogoutbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [LoginLogoutbtn setBackgroundImage:LoginImage forState:UIControlStateNormal];
+        [LoginLogoutbtn addTarget:self action:@selector(TransferSubscription:) forControlEvents:UIControlEventTouchUpInside];
+        LoginLogoutbtn.frame=CGRectMake(0.0, 0.0, 60.0, 40.0);
+        LoginViaLearnersCloud = [[UIBarButtonItem alloc] initWithCustomView:LoginLogoutbtn];
+        LoginViaLearnersCloud.tag  = 1;
+        self.navigationItem.rightBarButtonItem = LoginViaLearnersCloud;
         }
     else {
         
@@ -561,14 +603,22 @@
                                                 withError:&error]) {
                   NSLog(@"error in trackEvent");
               }
+              //Store UserName for Later Use
+              
+              NSString *UsernameToStore = UsernameText.text;
+              NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+              [userDefaults setObject:UsernameToStore forKey:@"LCUserName"];
+
 
               AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
               appDelegate.AccessAll = TRUE;
               appDelegate.UserEmail =  UsernameText.text;
-              LoginTitle = @"Logout";
-              [LoginViaLearnersCloud setTarget:self];
-              [LoginViaLearnersCloud setAction:@selector(LogoutUser:)];
-              LoginViaLearnersCloud.title = @"Logout";
+              /*LoginTitle = @"Logout";
+               [LoginViaLearnersCloud setImage:nil];
+               [LoginViaLearnersCloud setImage:LogoutImage];
+               [LoginViaLearnersCloud setTarget:self];
+               [LoginViaLearnersCloud setAction:@selector(LogoutUser:)];
+               LoginViaLearnersCloud.tag = 2;*/
               
 
               [self ViewFreeVideos:self];
@@ -684,7 +734,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     
-    [(UIActivityIndicatorView *)[self navigationItem].rightBarButtonItem.customView stopAnimating];
+    //[(UIActivityIndicatorView *)[self navigationItem].rightBarButtonItem.customView stopAnimating];
     [self willAnimateRotationToInterfaceOrientation:self.interfaceOrientation duration:1];
 
 }
@@ -693,7 +743,7 @@
     
     [textField resignFirstResponder];
     
-    //[textField setEnablesReturnKeyAutomatically:NO];
+    
     return YES;
 
 }

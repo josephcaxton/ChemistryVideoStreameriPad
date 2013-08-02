@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  ChemistryVideoStreameriPhone
+//  ChemistryVideoStreameriPad
 //
 //  Created by Joseph caxton-Idowu on 04/06/2012.
 //  Copyright (c) 2012 caxtonidowu. All rights reserved.
@@ -24,6 +24,8 @@
     NSString *UserEmail;
     BOOL DoesUserHaveEmail;
     BOOL AccessAll;
+    NSNumber *FlagToLoginOrLogout;
+
     
     // this is to handle return from facebook
     
@@ -45,6 +47,7 @@
 @property (nonatomic, assign) BOOL DoesUserHaveEmail;
 @property (nonatomic, assign) BOOL AccessAll;
 @property (nonatomic, retain)  Facebook *m_facebook;
+@property (nonatomic, retain)  NSNumber *FlagToLoginOrLogout;
 
 
 - (NSString *)applicationDocumentsDirectory;
