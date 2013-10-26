@@ -11,9 +11,10 @@
 #import "HowtoUse.h"
 @implementation Help
 
-@synthesize listofItems,LCButton,FirstTable,FirstViewframe;
+@synthesize listofItems,LCButton,FirstTable,FirstViewframe,PromoImageView,PromoImage;
 #define SCREEN_WIDTH 768
 #define SCREEN_HEIGHT 950
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 
 
@@ -22,7 +23,7 @@
     
     self.navigationItem.title = @"Help";
     
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0,185,55)];
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0,self.navigationItem.titleView.frame.origin.x,55)];
     label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor clearColor];
     label.text = self.navigationItem.title;
@@ -30,6 +31,10 @@
     self.navigationItem.titleView = label;
     [label sizeToFit];
     
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor,nil] forState:UIControlStateNormal];
+    
+    
+
 	listofItems = [[NSMutableArray alloc] init];
     
     NSString *HeaderLocation = [[NSBundle mainBundle] pathForResource:@"header_bar" ofType:@"png"];
@@ -59,10 +64,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    self.FirstTable.center = self.view.center;
-    
-    UIEdgeInsets inset = UIEdgeInsetsMake(150, 0, 0, 0);
-    self.FirstTable.contentInset = inset;
+[self willAnimateRotationToInterfaceOrientation:self.interfaceOrientation duration:1];
     
     
     
@@ -131,9 +133,9 @@
         
         UIView *PromoView = [[UIView alloc] init];
         NSString *PromoImagePath = [[NSBundle mainBundle] pathForResource:@"website_promo" ofType:@"png"];
-        UIImage *PromoImage = [[UIImage alloc] initWithContentsOfFile:PromoImagePath];
-        UIImageView *PromoImageView = [[UIImageView alloc] initWithImage:PromoImage];
-        PromoImageView.frame = CGRectMake(52, 05.0, 665, 361);
+        PromoImage = [[UIImage alloc] initWithContentsOfFile:PromoImagePath];
+        PromoImageView = [[UIImageView alloc] initWithImage:PromoImage];
+        PromoImageView.frame = CGRectMake(0, 05.0, 665, 361);
         [PromoView addSubview:PromoImageView];
         [cell addSubview:PromoView];
         
@@ -147,13 +149,13 @@
         
         LCButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [LCButton setImage:LCImage forState:UIControlStateNormal];
-        LCButton.frame = CGRectMake(265, 280, 250, 50);
+        LCButton.frame = CGRectMake(200, 280, 250, 50);
         [LCButton addTarget:self action:@selector(WebsitebuttonPressed) forControlEvents:UIControlEventTouchUpInside];
         [cell addSubview:LCButton];
     }
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-  	
+  	 [self willAnimateRotationToInterfaceOrientation:self.interfaceOrientation duration:1];
 	return cell;
 	
 }
@@ -303,9 +305,48 @@
 }
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{
     
-    self.FirstTable.center = self.view.center;
+    if (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown ) {
+		
+        //To fix ios7 extending edges
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")){
+            
+            FirstViewframe = CGRectMake(0 ,0, SCREEN_WIDTH, SCREEN_HEIGHT);
+            FirstTable.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
+            PromoImageView.frame  = CGRectMake(55, 05.0, 665, 361);
+            LCButton.frame = CGRectMake(280, 280, 250, 50);
+        }
+        else{
+            
+            FirstViewframe = CGRectMake(0 ,0, SCREEN_WIDTH, SCREEN_HEIGHT);
+            FirstTable.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
+            PromoImageView.frame  = CGRectMake(50, 05.0, 665, 361);
+            LCButton.frame = CGRectMake(260, 280, 250, 50);
+        }
+	}
+	
+	else {
+        
+        //To fix ios7 extending edges
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")){
+            
+            FirstViewframe = CGRectMake(0 ,0, SCREEN_HEIGHT, SCREEN_WIDTH);
+            FirstTable.frame = CGRectMake(50.0,0,SCREEN_HEIGHT,SCREEN_WIDTH);
+            PromoImageView.frame  = CGRectMake(130, 05.0, 665, 361);
+            LCButton.frame = CGRectMake(340, 280, 250, 50);
+            
+            
+        }
+        else{
+            
+            FirstViewframe = CGRectMake(0 ,0, SCREEN_HEIGHT, SCREEN_WIDTH);
+            FirstTable.frame = CGRectMake(50.0,0,SCREEN_HEIGHT,SCREEN_WIDTH);
+            PromoImageView.frame  = CGRectMake(140, 05.0, 665, 361);
+            LCButton.frame = CGRectMake(360, 280, 250, 50);
+        }
+		
+	}
     
-    // [FirstTable reloadData];
+
     
     
 }

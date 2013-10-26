@@ -111,7 +111,7 @@
     NSString *StartImageLocation = [[NSBundle mainBundle] pathForResource:@"free_and_paid_videos" ofType:@"png"];
     UIImage *StartImage = [[UIImage alloc] initWithContentsOfFile:StartImageLocation];
     
-    FreeVideos = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    FreeVideos = [UIButton buttonWithType:UIButtonTypeCustom];
     [FreeVideos setImage:StartImage forState:UIControlStateNormal];
     FreeVideos.frame = CGRectMake(40 ,330, 250, 47);
     
@@ -262,12 +262,34 @@
     
     WhichButton = (UIButton *)sender;
    // NSLog(@"%i",WhichButton.tag);
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Login"
+                                                            message:[NSString stringWithFormat:@"Enter Login details"]
+                                                           delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done",nil];
+        
+        [alertView setAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
+        [alertView show];
+        
+        UsernameText = [alertView textFieldAtIndex:0];
+        UsernameText.placeholder = @"EmailAddress";
+        UsernameText.tag = 1717;
+        UsernameText.enablesReturnKeyAutomatically = NO;
+        [UsernameText setKeyboardType:UIKeyboardTypeEmailAddress];
+        [UsernameText setDelegate:self];
+        
+        PasswordText = [alertView textFieldAtIndex:1];
+        PasswordText.placeholder = @"Password";
+        PasswordText.tag = 1818;
+        PasswordText.enablesReturnKeyAutomatically = NO;
+        [PasswordText setDelegate:self];
+        
+        alertView.tag = 1313;
+
+        
+    //NSString *myTitle = @"Enter your details";
+    //UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:myTitle message:@"\n \n \n \n" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     
-    NSString *myTitle = @"Enter your details";
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:myTitle message:@"\n \n \n \n" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     
-    
-    UsernameText = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 60.0, 260.0, 30.0)];
+    /*UsernameText = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 60.0, 260.0, 30.0)];
     UsernameText.placeholder = @"EmailAddress";
     UsernameText.tag = 1717;
     [UsernameText setBackgroundColor:[UIColor whiteColor]];
@@ -296,7 +318,7 @@
     [alertView addSubview:PasswordText];
     
     alertView.tag = 1313;
-    [alertView show];
+    [alertView show];*/
     
     }
 }
@@ -360,6 +382,23 @@
     
 }
 
+- (void)didPresentAlertView:(UIAlertView *)alertView{
+    
+    //NSLog(@"AlertView Tag is %i:", alertView.tag);
+    if(alertView.tag == 1313){
+        // If we already have password stored. Then add it to the username box
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        NSString *StoredUserName = [prefs stringForKey:@"LCUserName"];
+        if ([StoredUserName length] > 1) {
+            [alertView textFieldAtIndex:0].text = StoredUserName;
+        }
+        
+    }
+    
+    
+    
+    
+}
 
 
 - (BOOL)textFieldShouldEndEditing:(UITextView *)textView{

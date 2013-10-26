@@ -33,6 +33,9 @@
 	self.WebBox.scalesPageToFit = YES;
 	self.WebBox.delegate = self;
 	
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor,nil] forState:UIControlStateNormal];
+    
+
 	
 	[self loadDocument:DocumentName inView:self.WebBox];
 	[self.view addSubview:WebBox];
