@@ -563,6 +563,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = ChemistryVideoStreameriPad/GCSE.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph caxton (99S98QLWW3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph caxton (99S98QLWW3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChemistryVideoStreameriPad/ChemistryVideoStreameriPad-Prefix.pch";
 				INFOPLIST_FILE = "ChemistryVideoStreameriPad/ChemistryVideoStreameriPad-Info.plist";
@@ -573,7 +574,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = GCSE;
-				PROVISIONING_PROFILE = "AC72639C-1FA7-4DAA-8EBE-442C689D11FC";
+				PROVISIONING_PROFILE = "C2DE77E8-4B9C-4C9F-969B-D328214E9937";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -597,8 +598,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = GCSE;
-				PROVISIONING_PROFILE = "B94293AA-DE70-46C8-92DA-6DC8AD0FD88E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B94293AA-DE70-46C8-92DA-6DC8AD0FD88E";
+				PROVISIONING_PROFILE = "13368A53-AF53-4DEB-A06F-C6251A64484E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "13368A53-AF53-4DEB-A06F-C6251A64484E";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
