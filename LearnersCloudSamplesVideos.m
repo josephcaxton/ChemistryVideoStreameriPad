@@ -225,9 +225,9 @@
             {
                 TrailerPlayer *VP1 = [[TrailerPlayer alloc] initWithNibName:nil bundle:nil];
                 VP1.VideoFileName =@"MathsTtrailerv6";
-                VP1.ServerLocation = @"http://learnerscloud.com/iosStreamv2/maths/";
+                VP1.ServerLocation = @"https://www.learnerscloud.com/iosStreamv2/maths/";
                 //VP1.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:VP1 animated:NO];
+                [self.navigationController pushViewController:VP1 animated:YES];
             }
                 break;
                 
@@ -235,7 +235,7 @@
             {
                 TrailerPlayer *VP2 = [[TrailerPlayer	alloc] initWithNibName:nil bundle:nil];
                 VP2.VideoFileName =@"EnglishTrailerv5";
-                VP2.ServerLocation = @"http://learnerscloud.com/iosStreamv2/english/";
+                VP2.ServerLocation = @"https://www.learnerscloud.com/iosStreamv2/english/";
                 //VP2.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:VP2 animated:YES];
             }
@@ -246,7 +246,7 @@
                 
                TrailerPlayer *VP3 = [[TrailerPlayer	alloc] initWithNibName:nil bundle:nil];
                 VP3.VideoFileName =@"PhysicsTrailerV5";
-                VP3.ServerLocation =@"http://learnerscloud.com/iosStreamv2/Physics/";
+                VP3.ServerLocation =@"https://www.learnerscloud.com/iosStreamv2/Physics/";
                 //VP3.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:VP3 animated:YES];
             }
@@ -256,7 +256,7 @@
             {
                 TrailerPlayer *VP4 = [[TrailerPlayer	alloc] initWithNibName:nil bundle:nil];
                 VP4.VideoFileName =@"ChemistryPromoFINAL";
-                VP4.ServerLocation = @"http://learnerscloud.com/iosStreamv2/Chemistry/";
+                VP4.ServerLocation = @"https://www.learnerscloud.com/iosStreamv2/Chemistry/";
                 //VP4.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:VP4 animated:YES];
                 
@@ -268,7 +268,7 @@
             {
                 TrailerPlayer *VP5 = [[TrailerPlayer	alloc] initWithNibName:nil bundle:nil];
                 VP5.VideoFileName =@"BIO-Trailer";
-                VP5.ServerLocation = @"http://learnerscloud.com/iosStreamv2/Biology/";
+                VP5.ServerLocation = @"https://www.learnerscloud.com/iosStreamv2/Biology/";
                 //VP5.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:VP5 animated:YES];
             }
@@ -280,7 +280,7 @@
             {
                 TrailerPlayer *VP6 = [[TrailerPlayer	alloc] initWithNibName:nil bundle:nil];
                 VP6.VideoFileName =@"TESTIMONIALSTUDENTS";
-                VP6.ServerLocation = @"http://learnerscloud.com/iosStreamv2/Trailers/";
+                VP6.ServerLocation = @"https://www.learnerscloud.com/iosStreamv2/Trailers/";
                 //VP6.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:VP6 animated:YES];
             }
